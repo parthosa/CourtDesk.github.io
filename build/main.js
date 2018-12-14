@@ -1,4 +1,4 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
 /***/ 109:
 /***/ (function(module, exports) {
@@ -18,19 +18,27 @@ webpackEmptyAsyncContext.id = 109;
 /***/ }),
 
 /***/ 150:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
+var map = {
+	"../pages/test/test.module": [
+		272,
+		0
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(ids[0]);
 	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 150;
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 150;
+module.exports = webpackAsyncContext;
 
 /***/ }),
 
@@ -40,7 +48,7 @@ webpackEmptyAsyncContext.id = 150;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WelcomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(98);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -74,7 +82,7 @@ var WelcomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-welcome',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/welcome/welcome.html"*/'<ion-content scroll="false">\n	<ion-grid>\n  <ion-row>\n    <ion-col col-4 align-self-center offset-4>\n    	<div class="wrap">\n    		<ion-card>\n  <ion-card-content>\n			  <!-- <div class="splash-bg"></div> -->\n			  <div class="splash-info">\n			    <div class="splash-logo"></div>\n			    <div class="splash-intro">\n			      Courtdesk App\n			    </div>\n			  </div>\n			  <div padding>\n			    <button ion-button block (click)="login()">Sign Up</button>\n			    <button ion-button block (click)="login()" class="login">Login</button>\n			  </div>\n			</ion-card-content>\n		</ion-card>\n			  </div>\n			</ion-col>\n		</ion-row>\n	</ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/welcome/welcome.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], WelcomePage);
     return WelcomePage;
 }());
@@ -89,7 +97,7 @@ var WelcomePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__casefile_casefile__ = __webpack_require__(192);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -115,18 +123,21 @@ var DashboardPage = /** @class */ (function () {
         this.navParams = navParams;
         this.caseData = [
             {
-                'name': 'SLP(C) NO. 18713 OF 2016 ',
-                'filingDate': '31-03-2007',
-                'nextHearingDate': '27-02-2019'
-            }, {
-                'name': 'CM(M) NO. 671 OF 2016 ',
+                'name': 'CM(M) NO. 671 OF 2016',
                 'filingDate': '31-03-1970',
                 'nextHearingDate': '27-02-2019'
-            }, {
-                'name': 'SLP(C) NO. 21829-21829 OF 2016 ',
+            },
+            {
+                'name': 'SLP(C) NO. 18713 OF 2016',
+                'filingDate': '31-03-2007',
+                'nextHearingDate': '27-02-2019'
+            },
+            {
+                'name': 'SLP(C) NO. 21829-21829 OF 2016',
                 'filingDate': '31-03-2010',
                 'nextHearingDate': '27-02-2019'
-            }, {
+            },
+            {
                 'name': 'WP(C) NO. 613 OF 2018',
                 'filingDate': '31-03-2007',
                 'nextHearingDate': '27-02-2019'
@@ -136,14 +147,17 @@ var DashboardPage = /** @class */ (function () {
     DashboardPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad DashboardPage');
     };
-    DashboardPage.prototype.openCaseFile = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__casefile_casefile__["a" /* CaseFilePage */]);
+    DashboardPage.prototype.openCaseFile = function (name) {
+        console.log('name ' + name);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__casefile_casefile__["a" /* CaseFilePage */], {
+            'name': name
+        });
     };
     DashboardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dashboard',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/dashboard.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row >\n    <ion-col col-3 class="sidepane">\n    		<ion-grid>\n  				<ion-row class="profile">\n  					<ion-col>\n							<img src="./assets/imgs/default_bl.png">\n  						<h4>Alex Joseph</h4>\n  						<p>Advocate</p>\n  				  </ion-col>\n  				</ion-row>\n  				<ion-row>\n  					<ion-col class=\'sidepane-menu\'>\n              <ion-card >\n  <ion-card-header>\n    Profile Details\n  </ion-card-header>\n      <ion-list>\n        <button ion-item>\n          <strong>Date of Birth</strong> : 15-05-1965\n        </button>\n\n        <button ion-item>\n           <strong>Sex</strong> : Male\n        </button>\n\n        <button ion-item>\n          <strong>Operating City</strong> : Delhi\n        </button>\n\n        <button ion-item>\n          <strong>Case Files</strong> : 67\n        </button>\n\n\n      </ion-list>\n</ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <ion-col col-9>\n    	<h3 class="heading">Case Files</h3>\n    	<div class=\'document-list\'>\n    		<ion-card>\n\n  <ion-list>\n    <button ion-item>\n      <div class="title doc-list">\n        <ion-grid>\n          <ion-row>\n            <ion-col col-4>\n                <p>Case Name</p>\n            </ion-col>\n            <ion-col col-4>\n                <p>Filing Date</p>\n            </ion-col>\n            <ion-col col-4>\n              <p>Next Hearing Date</p>\n            </ion-col>\n</ion-row>\n</ion-grid>\n      </div>\n    </button>\n\n     <button ion-item *ngFor ="let data of caseData" (click)="openCaseFile()">\n      <div class="doc-list">\n         <ion-grid>\n          <ion-row>\n        <ion-col col-4>\n               <p>{{data.name}}</p>\n            </ion-col>\n            <ion-col col-4>\n        <p>{{data.filingDate}}</p>\n            </ion-col>\n            <ion-col col-4>\n        <p>{{data.nextHearingDate}}</p>\n            </ion-col>\n      </ion-row>\n    </ion-grid>\n      </div>\n    </button>\n\n  </ion-list>\n</ion-card>\n</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/dashboard.html"*/,
+            selector: 'page-dashboard',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/dashboard.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row >\n    <ion-col col-3 class="sidepane">\n    		<ion-grid>\n  				<ion-row class="profile">\n  					<ion-col>\n							<img src="./assets/imgs/default_bl.png">\n  						<h4>Alex Joseph</h4>\n  						<p>Advocate</p>\n  				  </ion-col>\n  				</ion-row>\n  				<ion-row>\n  					<ion-col class=\'sidepane-menu\'>\n              <ion-card >\n  <ion-card-header>\n    Profile Details\n  </ion-card-header>\n      <ion-list>\n        <button ion-item>\n          <strong>Date of Birth</strong> : 15-05-1965\n        </button>\n\n        <button ion-item>\n           <strong>Sex</strong> : Male\n        </button>\n\n        <button ion-item>\n          <strong>Operating City</strong> : Delhi\n        </button>\n\n        <button ion-item>\n          <strong>Case Files</strong> : 67\n        </button>\n\n\n      </ion-list>\n</ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <ion-col col-9>\n    	<h3 class="heading">Case Files</h3>\n    	<div class=\'document-list\'>\n    		<ion-card>\n\n  <ion-list>\n    <button ion-item>\n      <div class="title doc-list">\n        <ion-grid>\n          <ion-row>\n            <ion-col col-4>\n                <p>Case Name</p>\n            </ion-col>\n            <ion-col col-4>\n                <p>Filing Date</p>\n            </ion-col>\n            <ion-col col-4>\n              <p>Next Hearing Date</p>\n            </ion-col>\n</ion-row>\n</ion-grid>\n      </div>\n    </button>\n\n     <button ion-item *ngFor ="let data of caseData" (click)="openCaseFile(data.name)">\n      <div class="doc-list">\n         <ion-grid>\n          <ion-row>\n        <ion-col col-4>\n               <p>{{data.name}}</p>\n            </ion-col>\n            <ion-col col-4>\n        <p>{{data.filingDate}}</p>\n            </ion-col>\n            <ion-col col-4>\n        <p>{{data.nextHearingDate}}</p>\n            </ion-col>\n      </ion-row>\n    </ion-grid>\n      </div>\n    </button>\n\n  </ion-list>\n</ion-card>\n</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/dashboard.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], DashboardPage);
     return DashboardPage;
 }());
@@ -158,7 +172,8 @@ var DashboardPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CaseFilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -170,6 +185,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
  * Generated class for the CasepagePage page.
  *
@@ -177,18 +193,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var CaseFilePage = /** @class */ (function () {
-    function CaseFilePage(navCtrl, navParams) {
+    function CaseFilePage(navCtrl, navParams, sanitizer) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.sanitizer = sanitizer;
+        this.fileName = this.navParams.get('name');
+        this.filePath = './assets/docs/' + this.fileName + '.pdf';
+        console.log(this.filePath);
     }
     CaseFilePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad CasepagePage');
     };
     CaseFilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-casefile',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row >\n    <ion-col col-3 class="sidepane">\n    		<ion-grid>\n  				<ion-row class="profile">\n  					<ion-col>\n							<img src="./assets/imgs/default_bl.png">\n						  <h4>Alex Joseph</h4>\n              <p>Advocate</p>\n  				  </ion-col>\n  				</ion-row>\n  				<ion-row>\n  					<ion-col class=\'sidepane-menu\'>\n              <ion-card >\n  <ion-card-header>\n    Index\n  </ion-card-header>\n      <ion-list>\n        <button ion-item>\n         Application Under Article 227\n        </button>\n\n        <button ion-item>\n          Judgment V. Gopala Gowda, J\n        </button>\n\n        <button ion-item>\n          Securitisation Application\n        </button>\n\n        <button ion-item>\n          Detailed Track Events\n        </button>\n\n\n      </ion-list>\n</ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <ion-col col-9>\n    	<div class="toolbar">\n    		<ion-grid>\n          <ion-row>\n            <ion-col col-3>\n              <button ion-button>View Peshi</button>\n              <button ion-button>CL</button>\n            </ion-col>\n            <ion-col col-5>\n              <button ion-button>Highlight</button>\n              <button ion-button>Underline</button>\n              <button ion-button>Add Flag</button>\n            </ion-col>\n            <ion-col col-4>\n              <button ion-button float-right>Close</button>\n              <button ion-button float-right>Fullscreen</button>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n    	</div>\n    	<div class="pdf-view">\n    		<ion-card>\n\n  <ion-card-content>\n   <div class="viewer">\n    <img src="./assets/imgs/default.png">\n   </div>\n  </ion-card-content>\n\n</ion-card>\n    	</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/,
+            selector: 'page-casefile',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row >\n    <ion-col col-3 class="sidepane">\n    		<ion-grid>\n  				<ion-row class="profile">\n  					<ion-col>\n							<img src="./assets/imgs/default_bl.png">\n						  <h4>Alex Joseph</h4>\n              <p>Advocate</p>\n  				  </ion-col>\n  				</ion-row>\n  				<ion-row>\n  					<ion-col class=\'sidepane-menu\'>\n              <ion-card >\n  <ion-card-header>\n    Index\n  </ion-card-header>\n      <ion-list>\n        <button ion-item>\n         Application Under Article 227\n        </button>\n\n        <button ion-item>\n          Judgment V. Gopala Gowda, J\n        </button>\n\n        <button ion-item>\n          Securitisation Application\n        </button>\n\n        <button ion-item>\n          Detailed Track Events\n        </button>\n\n\n      </ion-list>\n</ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <ion-col col-9>\n    	<div class="toolbar">\n    		<ion-grid>\n          <ion-row>\n            <ion-col col-3>\n              <button ion-button>View Peshi</button>\n              <button ion-button>CL</button>\n            </ion-col>\n            <ion-col col-5>\n              <button ion-button>Highlight</button>\n              <button ion-button>Underline</button>\n              <button ion-button>Add Flag</button>\n            </ion-col>\n            <ion-col col-4>\n              <button ion-button float-right>Close</button>\n              <button ion-button float-right>Fullscreen</button>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n    	</div>\n    	<div class="pdf-view">\n    		<ion-card>\n\n  <ion-card-content>\n   <div class="viewer">\n     <!--  <pdf-viewer [src]="./assets/docs/example.pdf" [render-text]="true" style="display: block;">\n      </pdf-viewer> -->\n      <object [data]="filePath | safe" width="100%" height="100%" type=\'application/pdf\'>\n   <p>Sorry, the PDF couldn\'t be displayed :(</p>\n   <!-- <a href="{{filePath}}" target="_blank">Click Here</a> -->\n </object>\n   </div>\n  </ion-card-content>\n\n</ion-card>\n    	</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */]])
     ], CaseFilePage);
     return CaseFilePage;
 }());
@@ -216,16 +236,17 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(263);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_welcome_welcome__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_dashboard_dashboard__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_casefile_casefile__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__safe_pipe__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__ = __webpack_require__(196);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -237,6 +258,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // import { MaterializeModule } from "angular2-materialize";
+
 
 
 
@@ -255,12 +277,16 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__pages_welcome_welcome__["a" /* WelcomePage */],
                 __WEBPACK_IMPORTED_MODULE_5__pages_login_login__["a" /* LoginPage */],
                 __WEBPACK_IMPORTED_MODULE_6__pages_dashboard_dashboard__["a" /* DashboardPage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_casefile_casefile__["a" /* CaseFilePage */]
+                __WEBPACK_IMPORTED_MODULE_7__pages_casefile_casefile__["a" /* CaseFilePage */],
+                __WEBPACK_IMPORTED_MODULE_8__safe_pipe__["a" /* SafePipe */]
+                // PdfViewerModule
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
-                    links: []
+                    links: [
+                        { loadChildren: '../pages/test/test.module#TestPageModule', name: 'TestPage', segment: 'test', priority: 'low', defaultHistory: [] }
+                    ]
                 }),
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
@@ -272,8 +298,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__pages_casefile_casefile__["a" /* CaseFilePage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
             ]
         })
@@ -291,7 +317,7 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_welcome_welcome__ = __webpack_require__(190);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_login_login__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(193);
@@ -342,14 +368,14 @@ var MyApp = /** @class */ (function () {
         this.nav.setRoot(page.component);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/app/app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Pages</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* MenuController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* MenuController */],
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
             __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -360,13 +386,49 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 271:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SafePipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(20);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SafePipe = /** @class */ (function () {
+    function SafePipe(sanitizer) {
+        this.sanitizer = sanitizer;
+    }
+    SafePipe.prototype.transform = function (url) {
+        return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+    };
+    SafePipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({ name: 'safe' }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]])
+    ], SafePipe);
+    return SafePipe;
+}());
+
+//# sourceMappingURL=safe-pipe.js.map
+
+/***/ }),
+
 /***/ 98:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard_dashboard__ = __webpack_require__(191);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -420,8 +482,8 @@ var LoginPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-login',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/login/login.html"*/'<ion-content>\n<ion-grid>\n  <ion-row>\n    <ion-col col-4 align-self-center offset-4>\n    	<div class="wrap">\n    		<ion-card>\n  <ion-card-header>\n    		<h4>Login</h4>\n  </ion-card-header>\n  <ion-card-content>\n  <form (submit)="doLogin()">\n    <ion-list>\n		  <ion-item>\n		    <ion-label fixed>Profile Type</ion-label>\n		    <ion-select [(ngModel)]="account.type" name="type">\n		      <ion-option value="Judge">Judge</ion-option>\n		      <ion-option value="Court Staff">Court Staff</ion-option>\n		      <ion-option value="LR">LR</ion-option>\n		    </ion-select>\n		  </ion-item>\n\n      <ion-item>\n        <ion-label fixed>Email</ion-label>\n        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>\n      </ion-item>\n\n      <!--\n      Want to use a Username instead of an Email? Here you go:\n\n      <ion-item>\n        <ion-label floating>{{ \'USERNAME\' | translate }}</ion-label>\n        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>\n      </ion-item>\n      -->\n\n      <ion-item>\n        <ion-label fixed>Password</ion-label>\n        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>\n      </ion-item>\n\n      <div padding>\n        <button ion-button color="primary" block>Login\n        </button>\n      </div>\n\n    </ion-list>\n  </form>\n</ion-card-content>\n</ion-card>\n</div>\n</ion-col>\n</ion-row>\n</ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/login/login.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]])
     ], LoginPage);
     return LoginPage;
 }());
