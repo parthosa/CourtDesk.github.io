@@ -25864,8 +25864,7 @@ page-dashboard .sidepane-menu ion-label {
 }
 
 page-login ion-grid {
-  background: url("./assets/imgs/splashbg.png");
-  background-size: cover;
+  background: #4889fc;
 }
 
 page-login ion-item .item-inner {
@@ -25893,8 +25892,7 @@ page-login ion-col .wrap h4 {
 }
 
 page-welcome ion-grid {
-  background: url("./assets/imgs/splashbg.png");
-  background-size: cover;
+  background: #4889fc;
 }
 
 page-welcome .splash-bg {
