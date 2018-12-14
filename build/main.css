@@ -25771,6 +25771,24 @@ page-casefile .sidepane-menu ion-label {
   margin: 7px 0 !important;
 }
 
+page-casefile .pdf-view {
+  height: calc(100vh - 100px);
+}
+
+page-casefile .pdf-view ion-card.card.card-md {
+  height: 100%;
+  margin: 0 !important;
+}
+
+page-casefile .pdf-view ion-card-content.card-content.card-content-md {
+  height: 100%;
+}
+
+page-casefile .viewer {
+  height: 100%;
+  overflow: scroll;
+}
+
 page-dashboard ion-grid.page-grid {
   padding: 0 !important;
   height: 100vh;
