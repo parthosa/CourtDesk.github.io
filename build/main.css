@@ -25823,9 +25823,12 @@ page-dashboard .heading {
   margin: 40px 10px;
 }
 
-page-dashboard .documents-list {
+page-dashboard .document-list {
   width: 100%;
-  margin-top: 10vh;
+}
+
+page-dashboard .document-list ion-label {
+  margin: 0 !important;
 }
 
 page-dashboard .doc-list {
