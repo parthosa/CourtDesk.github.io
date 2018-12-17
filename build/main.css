@@ -25701,6 +25701,25 @@ page-casefile .sidepane ion-row {
   padding-top: 5vh;
 }
 
+page-casefile .sidepane .back-icon {
+  font-size: 2em;
+  float: left;
+  padding: 13px;
+}
+
+page-casefile .content-area {
+  width: 75%;
+}
+
+page-casefile .content-area.full-width {
+  width: 100% !important;
+}
+
+page-casefile .toolbar .hamburger {
+  font-size: 2em;
+  color: white;
+}
+
 page-casefile .profile img {
   height: 150px;
   border-radius: 50% !important;
@@ -25794,8 +25813,13 @@ page-dashboard ion-grid.page-grid {
   height: 100vh;
 }
 
-page-dashboard ion-grid.page-grid ion-row {
+page-dashboard ion-grid.page-grid ion-row.page-row {
   height: 100%;
+}
+
+page-dashboard .logout-button {
+  float: right;
+  margin: 10px;
 }
 
 page-dashboard .sidepane {

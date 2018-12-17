@@ -80,7 +80,7 @@ var WelcomePage = /** @class */ (function () {
     };
     WelcomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-welcome',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/welcome/welcome.html"*/'<ion-content scroll="false">\n	<ion-grid>\n  <ion-row>\n    <ion-col col-4 align-self-center offset-4>\n    	<div class="wrap">\n    		<ion-card>\n  <ion-card-content>\n			  <!-- <div class="splash-bg"></div> -->\n			  <div class="splash-info">\n			    <div class="splash-logo"></div>\n			    <div class="splash-intro">\n			      Courtdesk App\n			    </div>\n			  </div>\n			  <div padding>\n			    <button ion-button block (click)="login()">Sign Up</button>\n			    <button ion-button block (click)="login()" class="login">Login</button>\n			  </div>\n			</ion-card-content>\n		</ion-card>\n			  </div>\n			</ion-col>\n		</ion-row>\n	</ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/welcome/welcome.html"*/
+            selector: 'page-welcome',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/welcome/welcome.html"*/'<ion-content scroll="false">\n	<ion-grid>\n  <ion-row>\n    <ion-col col-4 align-self-center offset-4>\n    	<div class="wrap">\n    		<ion-card>\n  <ion-card-content>\n			  <!-- <div class="splash-bg"></div> -->\n			  <div class="splash-info">\n			    <div class="splash-logo"></div>\n			    <div class="splash-intro">\n			      Courtdesk\n			    </div>\n			  </div>\n			  <div padding>\n			    <button ion-button block (click)="login()">Sign Up</button>\n			    <button ion-button block (click)="login()" class="login">Login</button>\n			  </div>\n			</ion-card-content>\n		</ion-card>\n			  </div>\n			</ion-col>\n		</ion-row>\n	</ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/welcome/welcome.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], WelcomePage);
@@ -123,39 +123,50 @@ var DashboardPage = /** @class */ (function () {
         this.navParams = navParams;
         this.caseData = [
             {
-                'name': 'CM(M) NO. 671 OF 2016',
+                'name': 'CM(M) 671 of 2016',
                 'filingDate': '31-03-1970',
-                'nextHearingDate': '27-02-2019'
+                'nextHearingDate': '27-02-2019',
+                'caselaws': ['CS(OS) No. 4095 OF 2014 GOLF TECHNOLOGIES (P) LTD VS AXIS BANK LTD. _ ORS.pdf',
+                    'Maya Devi vs Lalta Prasad .pdf',
+                    ' UNITED BANK OF INDIA VS SATYAWATI TONDON AND OTHERS.pdf']
+            },
+            {
+                'name': 'WP (C) No. 613 of 2018',
+                'filingDate': '31-03-2007',
+                'nextHearingDate': '27-02-2019',
+                'caselaws': ['LPA 699 OF 2015 AGARWAL TRACOM PVT LTD VS PUNJAB NATIONAL BANK AND ORS.pdf']
             },
             {
                 'name': 'SLP(C) NO. 18713 OF 2016',
-                'filingDate': '31-03-2007',
-                'nextHearingDate': '27-02-2019'
-            },
-            {
-                'name': 'SLP(C) NO. 21829-21829 OF 2016',
                 'filingDate': '31-03-2010',
-                'nextHearingDate': '27-02-2019'
+                'nextHearingDate': '27-02-2019',
+                'caselaws': ['Maya Devi vs Lalta Prasad .pdf']
             },
             {
-                'name': 'WP(C) NO. 613 OF 2018',
+                'name': 'WP (C) No. 854 of 2018',
                 'filingDate': '31-03-2007',
-                'nextHearingDate': '27-02-2019'
+                'nextHearingDate': '27-02-2019',
+                'caselaws': ['CIVIL APPEAL NO. 5990 OF 2010 UNITED BANK OF INDIA VS SATYAWATI TONDON AND OTHERS.pdf',
+                    'CS(OS) No. 4095 OF 2014 GOLF TECHNOLOGIES (P) LTD VS AXIS BANK LTD. _ ORS.pdf',
+                    'W.P(C) 4344 OF 2015 ONIL SADH VS FEDERAL BANK LTD AND ORS.pdf']
             },
         ];
     }
     DashboardPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad DashboardPage');
     };
-    DashboardPage.prototype.openCaseFile = function (name) {
-        console.log('name ' + name);
+    DashboardPage.prototype.openCaseFile = function (data) {
+        console.log('name ' + data);
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__casefile_casefile__["a" /* CaseFilePage */], {
-            'name': name
+            'data': data
         });
+    };
+    DashboardPage.prototype.logout = function () {
+        this.navCtrl.popToRoot();
     };
     DashboardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dashboard',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/dashboard.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row >\n    <ion-col col-3 class="sidepane">\n    		<ion-grid>\n  				<ion-row class="profile">\n  					<ion-col>\n							<img src="./assets/imgs/default_bl.png">\n  						<h4>Alex Joseph</h4>\n  						<p>Advocate</p>\n  				  </ion-col>\n  				</ion-row>\n  				<ion-row>\n  					<ion-col class=\'sidepane-menu\'>\n              <ion-card >\n  <ion-card-header>\n    Profile Details\n  </ion-card-header>\n      <ion-list>\n        <button ion-item>\n          <strong>Date of Birth</strong> : 15-05-1965\n        </button>\n\n        <button ion-item>\n           <strong>Sex</strong> : Male\n        </button>\n\n        <button ion-item>\n          <strong>Operating City</strong> : Delhi\n        </button>\n\n        <button ion-item>\n          <strong>Case Files</strong> : 67\n        </button>\n\n\n      </ion-list>\n</ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <ion-col col-9>\n    	<h3 class="heading">Case Files</h3>\n    	<div class=\'document-list\'>\n    		<ion-card>\n\n  <ion-list>\n    <button ion-item>\n      <div class="title doc-list">\n        <ion-grid>\n          <ion-row>\n            <ion-col col-4>\n                <p>Case Name</p>\n            </ion-col>\n            <ion-col col-4>\n                <p>Filing Date</p>\n            </ion-col>\n            <ion-col col-4>\n              <p>Next Hearing Date</p>\n            </ion-col>\n</ion-row>\n</ion-grid>\n      </div>\n    </button>\n\n     <button ion-item *ngFor ="let data of caseData" (click)="openCaseFile(data.name)">\n      <div class="doc-list">\n         <ion-grid>\n          <ion-row>\n        <ion-col col-4>\n               <p>{{data.name}}</p>\n            </ion-col>\n            <ion-col col-4>\n        <p>{{data.filingDate}}</p>\n            </ion-col>\n            <ion-col col-4>\n        <p>{{data.nextHearingDate}}</p>\n            </ion-col>\n      </ion-row>\n    </ion-grid>\n      </div>\n    </button>\n\n  </ion-list>\n</ion-card>\n</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/dashboard.html"*/,
+            selector: 'page-dashboard',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/dashboard.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row class="page-row">\n    <ion-col col-3 class="sidepane">\n    		<ion-grid>\n  				<ion-row class="profile">\n  					<ion-col>\n							<img src="./assets/imgs/default_bl.png">\n  						<h4>Welcome, <strong>HMJ SB</strong></h4>\n  						<!-- <p>Advocate</p> -->\n  				  </ion-col>\n  				</ion-row>\n  				<ion-row>\n  					<ion-col class=\'sidepane-menu\'>\n              <ion-card >\n                <ion-card-header>\n                  Court Room No. 23\n                </ion-card-header>\n                    <ion-list>\n                      <button ion-item>\n                        <strong>Roster</strong> : Banking Rights and Petition\n                      </button>\n\n                      <button ion-item>\n                         <strong>Bench</strong> : HMJ SM\n                      </button>\n\n                    </ion-list>\n              </ion-card>\n\n              <ion-card >\n                <ion-card-header>\n                  Court Room No. 34\n                </ion-card-header>\n                    <ion-list>\n                      <button ion-item>\n                        <strong>Roster</strong> : Criminal Appeals\n                      </button>\n\n                      <button ion-item>\n                         <strong>Bench</strong> : HMJ SB,HMJ SM\n                      </button>\n\n                    </ion-list>\n              </ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <ion-col col-9>\n      <div class="logout-button">\n       <button ion-button (click)="logout()">Logout</button>\n     </div>\n      <h3 class="heading">Court Room 23</h3>\n    	<div class=\'document-list\'>\n    		<ion-card>\n\n  <ion-list>\n    <button ion-item>\n      <div class="title doc-list">\n        <ion-grid>\n          <ion-row>\n            <ion-col col-4>\n                <p>Case Name</p>\n            </ion-col>\n            <ion-col col-4>\n                <p>Filing Date</p>\n            </ion-col>\n            <ion-col col-4>\n              <p>Next Hearing Date</p>\n            </ion-col>\n</ion-row>\n</ion-grid>\n      </div>\n    </button>\n\n     <button ion-item *ngFor ="let data of caseData" (click)="openCaseFile(data)">\n      <div class="doc-list">\n         <ion-grid>\n          <ion-row>\n        <ion-col col-4>\n               <p>{{data.name}}</p>\n            </ion-col>\n            <ion-col col-4>\n        <p>{{data.filingDate}}</p>\n            </ion-col>\n            <ion-col col-4>\n        <p>{{data.nextHearingDate}}</p>\n            </ion-col>\n      </ion-row>\n    </ion-grid>\n      </div>\n    </button>\n\n  </ion-list>\n</ion-card>\n</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/dashboard.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], DashboardPage);
@@ -183,6 +194,41 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 
 
 
@@ -197,20 +243,80 @@ var CaseFilePage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.sanitizer = sanitizer;
-        this.fileName = this.navParams.get('name');
-        this.filePath = './assets/docs/' + this.fileName + '.pdf';
-        console.log(this.filePath);
+        this.sidepane = false;
+        this.data = this.navParams.get('data');
+        this.filePath = './assets/docs/' + this.data['name'] + '.pdf';
+        // console.dir(PSPDFKit);
     }
     CaseFilePage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad CasepagePage');
+        this.loadPDF("casefile.pdf");
+    };
+    CaseFilePage.prototype.loadPDF = function (file) {
+        var _this = this;
+        this.clearPDF();
+        PSPDFKit.load({
+            container: "#pspdfkit",
+            pdf: "https://courtdesk.github.io/assets/docs/" + encodeURI(this.data['name']) + "/" + file,
+            licenseKey: "pSLTHKcz8tUcSuxxJyXqcCLSnzofPGJDFriLSprnRoDPK7S0F1jO9we4TB0KlG9DKTK2dx-_V8tQVXT_BvnYstUmUI2747YjeyyCh4yFS0hTvDOnkihuaDcX3MQZohJIKcT7GUZmtkmSkF_BlaGhGC8ustuTm45Dl5m1c8gxITdeWmf84LD3RAlqmQlB1JxdjED1ZbPsCt3kHQRXNR0D7vfRBY-YxQz3rxh6YUXMX1UMUBoMMdpeMRBAfCpF_jKDO5tULMA-8fs7ru5gTy-48o2l9UT1lLqEU32nCsyKldkoNopQ7JF5ezry74iw7uGEE2aIT3UApmFYoNYqi_FZy4zDCcy0RmKBrCHAIW6Q3U_FO-_8rJuhSoVSv6fTw7nGERFxh-FuoaNgPIBpC0QFGjkEZ5RhG2QnSY1-h1RWGayqEaEkja1XrQpBtvqizbxs",
+            disableWebAssemblyStreaming: true
+        })
+            .then(function (instance) {
+            console.log("PSPDFKit loaded", instance);
+            instance.addEventListener("annotations.didSave", function () { return __awaiter(_this, void 0, void 0, function () {
+                var instantJSON;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, instance.exportInstantJSON()];
+                        case 1:
+                            instantJSON = _a.sent();
+                            return [4 /*yield*/, fetch("https://your-server.com/instant-json", {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    },
+                                    body: JSON.stringify(instantJSON)
+                                })];
+                        case 2:
+                            _a.sent();
+                            return [2 /*return*/];
+                    }
+                });
+            }); });
+        })
+            .catch(function (error) {
+            console.error(error.message);
+        });
+    };
+    CaseFilePage.prototype.close = function () {
+        this.navCtrl.pop();
+    };
+    CaseFilePage.prototype.hideBar = function () {
+        this.sidepane = false;
+    };
+    CaseFilePage.prototype.showBar = function () {
+        this.sidepane = true;
+    };
+    CaseFilePage.prototype.openCaseLaw = function (caselaw) {
+        this.loadPDF("Caselaw/" + caselaw);
+    };
+    CaseFilePage.prototype.viewPeshi = function () {
+        this.loadPDF("peshi.pdf");
+    };
+    CaseFilePage.prototype.clearPDF = function () {
+        var parent = document.getElementById("pspdfkit");
+        while (parent.firstChild) {
+            parent.firstChild.remove();
+        }
     };
     CaseFilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-casefile',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row >\n    <ion-col col-3 class="sidepane">\n    		<ion-grid>\n  				<ion-row class="profile">\n  					<ion-col>\n							<img src="./assets/imgs/default_bl.png">\n						  <h4>Alex Joseph</h4>\n              <p>Advocate</p>\n  				  </ion-col>\n  				</ion-row>\n  				<ion-row>\n  					<ion-col class=\'sidepane-menu\'>\n              <ion-card >\n  <ion-card-header>\n    Index\n  </ion-card-header>\n      <ion-list>\n        <button ion-item>\n         0001\n        </button>\n\n        <button ion-item>\n         0002\n        </button>\n\n        <button ion-item>\n          0003\n        </button>\n\n        <button ion-item>\n          0004\n        </button>\n\n<!--         <button ion-item>\n         Application Under Article 227\n        </button>\n\n        <button ion-item>\n          Judgment V. Gopala Gowda, J\n        </button>\n\n        <button ion-item>\n          Securitisation Application\n        </button>\n\n        <button ion-item>\n          Detailed Track Events\n        </button>\n -->\n\n      </ion-list>\n</ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <ion-col col-9>\n    	<div class="toolbar">\n    		<ion-grid>\n          <ion-row>\n            <ion-col col-3>\n              <button ion-button>View Peshi</button>\n              <button ion-button>CL</button>\n            </ion-col>\n            <ion-col col-5>\n              <button ion-button>Highlight</button>\n              <button ion-button>Underline</button>\n              <button ion-button>Add Flag</button>\n            </ion-col>\n            <ion-col col-4>\n              <button ion-button float-right>Close</button>\n              <button ion-button float-right>Fullscreen</button>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n    	</div>\n    	<div class="pdf-view">\n    		<ion-card>\n\n  <ion-card-content>\n   <div class="viewer">\n     <!--  <pdf-viewer [src]="./assets/docs/example.pdf" [render-text]="true" style="display: block;">\n      </pdf-viewer> -->\n      <object [data]="filePath | safe" width="100%" height="100%" type=\'application/pdf\'>\n   <p>Sorry, the PDF couldn\'t be displayed :(</p>\n   <!-- <a href="{{filePath}}" target="_blank">Click Here</a> -->\n </object>\n   </div>\n  </ion-card-content>\n\n</ion-card>\n    	</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/,
+            selector: 'page-casefile',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row >\n    <ion-col col-3 class="sidepane" *ngIf="sidepane">\n         <ion-icon name="arrow-round-back" class="back-icon" (click) = "hideBar()"></ion-icon>\n        <ion-grid>\n          <ion-row class="profile">\n            <ion-col class=\'sidepane-menu\'>\n              <ion-card >\n  <ion-card-header>\n    Case Laws:\n  </ion-card-header>\n      <ion-list>\n        <button ion-item *ngFor ="let caselaw of data.caselaws" (click)="openCaseLaw(caselaw)">\n         {{caselaw}}\n        </button>\n\n\n      </ion-list>\n</ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <!-- <ion-col col-12> -->\n    <ion-col class="content-area" [ngClass]="{\'full-width\': sidepane==false}">\n    	<div class="toolbar">\n    		<ion-grid>\n          <ion-row>\n            <ion-col col-6>\n              \n<!-- \n              <button ion-button (click)="back()" > \n                <ion-icon name="arrow-round-back" class="back-icon" ></ion-icon>\n              </button> -->\n              <button ion-button (click)="viewPeshi()">View Peshi</button>\n              <button ion-button (click)="showBar()">CL</button>\n            </ion-col>\n         \n            <ion-col col-6>\n              <button ion-button float-right (click)="close()">Close</button>\n              <button ion-button float-right>Fullscreen</button>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n    	</div>\n    	<div class="pdf-view">\n    		<ion-card>\n\n  <ion-card-content>\n   <div class="viewer">\n     <!--  <pdf-viewer [src]="./assets/docs/example.pdf" [render-text]="true" style="display: block;">\n      </pdf-viewer> -->\n    <!--   <object [data]="filePath | safe" width="100%" height="100%" type=\'application/pdf\'>\n   <p>Sorry, the PDF couldn\'t be displayed :(</p>\n </object> -->\n    <div id="pspdfkit" style="width: 100%; height: 480px;"></div>\n   </div>\n  </ion-card-content>\n\n</ion-card>\n    	</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _c || Object])
     ], CaseFilePage);
     return CaseFilePage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=casefile.js.map
