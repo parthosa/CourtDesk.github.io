@@ -25908,6 +25908,11 @@ page-dashboard .sidepane-menu ion-label {
   margin: 7px 0 !important;
 }
 
+page-dashboard .no-files {
+  text-align: center;
+  margin: 2em 1em;
+}
+
 page-login ion-grid {
   background: #4889fc;
 }
