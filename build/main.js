@@ -22,7 +22,7 @@ webpackEmptyAsyncContext.id = 109;
 
 var map = {
 	"../pages/test/test.module": [
-		272,
+		273,
 		0
 	]
 };
@@ -225,6 +225,8 @@ var DashboardPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_uuid__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_uuid___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_uuid__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -272,6 +274,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
+
 /**
  * Generated class for the CasepagePage page.
  *
@@ -283,10 +286,13 @@ var CaseFilePage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.sanitizer = sanitizer;
+        this.currentPageIndex = 0;
         this.sidepane = false;
         this.peshi = false;
         this.data = this.navParams.get('data');
-        this.filePath = './assets/docs/' + this.data['name'] + '.pdf';
+        this.baseUrl = 'https://courtdesk.github.io';
+        // this.baseUrl = 'http://127.0.0.1:7070';
+        this.removedItems = ["annotate", "pan", "ink-signature", "image", "stamp", "line", "rectangle", "arrow", "ellipse", "polygon", "polyline"];
         // console.dir(PSPDFKit);
     }
     CaseFilePage.prototype.ionViewDidLoad = function () {
@@ -301,41 +307,75 @@ var CaseFilePage = /** @class */ (function () {
     CaseFilePage.prototype.loadPDF = function (file) {
         var _this = this;
         this.clearPDF();
-        var items = PSPDFKit.defaultToolbarItems;
-        console.log(items);
+        var filePath = encodeURI(this.data['name']) + "/" + file;
+        var defaultItems = PSPDFKit.defaultToolbarItems;
+        console.log(defaultItems);
         PSPDFKit.load({
             container: "#pspdfkit",
-            pdf: "https://courtdesk.github.io/assets/docs/" + encodeURI(this.data['name']) + "/" + file,
+            pdf: this.baseUrl + "/assets/docs/" + filePath,
+            instantJSON: JSON.parse(localStorage.getItem(filePath)),
             licenseKey: "pSLTHKcz8tUcSuxxJyXqcCLSnzofPGJDFriLSprnRoDPK7S0F1jO9we4TB0KlG9DKTK2dx-_V8tQVXT_BvnYstUmUI2747YjeyyCh4yFS0hTvDOnkihuaDcX3MQZohJIKcT7GUZmtkmSkF_BlaGhGC8ustuTm45Dl5m1c8gxITdeWmf84LD3RAlqmQlB1JxdjED1ZbPsCt3kHQRXNR0D7vfRBY-YxQz3rxh6YUXMX1UMUBoMMdpeMRBAfCpF_jKDO5tULMA-8fs7ru5gTy-48o2l9UT1lLqEU32nCsyKldkoNopQ7JF5ezry74iw7uGEE2aIT3UApmFYoNYqi_FZy4zDCcy0RmKBrCHAIW6Q3U_FO-_8rJuhSoVSv6fTw7nGERFxh-FuoaNgPIBpC0QFGjkEZ5RhG2QnSY1-h1RWGayqEaEkja1XrQpBtvqizbxs",
             disableWebAssemblyStreaming: true
         })
             .then(function (instance) {
+            console.log(instance);
+            instance.setViewState(function (viewState) {
+                return viewState.set("sidebarMode", PSPDFKit.SidebarMode.ANNOTATIONS);
+            });
+            if (file === "casefile.pdf") {
+                instance.setViewState(function (viewState) {
+                    return viewState.set("currentPageIndex", _this.currentPageIndex);
+                });
+            }
             instance.setToolbarItems(function (items) {
                 return items.map(function (item) {
-                    if (item.type == "ink-signature") {
+                    console.log(item, item.dropdownGroup);
+                    if (_this.removedItems.indexOf(item.type) > -1)
                         item.mediaQueries = ['(min-width: 8000px)'];
-                    }
+                    else
+                        item.mediaQueries = ['(min-width: 10px)'];
+                    if (item.type == "ink" || item.type == "highlighter")
+                        item['dropdownGroup'] = __WEBPACK_IMPORTED_MODULE_3_angular2_uuid__["UUID"].UUID();
+                    item['responsiveGroup'] = __WEBPACK_IMPORTED_MODULE_3_angular2_uuid__["UUID"].UUID();
                     return item;
                 });
             });
+            instance.addEventListener("viewState.change", function (viewState) {
+                if (file === "casefile.pdf")
+                    _this.currentPageIndex = viewState.get('currentPageIndex');
+            });
             instance.addEventListener("annotations.didSave", function () { return __awaiter(_this, void 0, void 0, function () {
-                var instantJSON;
                 return __generator(this, function (_a) {
-                    switch (_a.label) {
-                        case 0: return [4 /*yield*/, instance.exportInstantJSON()];
-                        case 1:
-                            instantJSON = _a.sent();
-                            return [4 /*yield*/, fetch("https://your-server.com/instant-json", {
-                                    method: "POST",
-                                    headers: {
-                                        "Content-Type": "application/json"
-                                    },
-                                    body: JSON.stringify(instantJSON)
-                                })];
-                        case 2:
-                            _a.sent();
-                            return [2 /*return*/];
-                    }
+                    // const instantJSON = await instance.exportInstantJSON();
+                    // console.log(JSON.stringify(instantJSON));
+                    // await fetch("http://127.0.0.1:8001", {
+                    //   method: "POST",
+                    //   headers: {
+                    //     "Content-Type": "application/json"
+                    //   },
+                    //   body: JSON.stringify(instantJSON)
+                    // });
+                    instance.exportInstantJSON().then(function (instantJSON) {
+                        localStorage.setItem(filePath, JSON.stringify(instantJSON));
+                    });
+                    return [2 /*return*/];
+                });
+            }); });
+            instance.addEventListener("bookmarks.didSave", function () { return __awaiter(_this, void 0, void 0, function () {
+                return __generator(this, function (_a) {
+                    // const instantJSON = await instance.exportInstantJSON();
+                    // console.log(JSON.stringify(instantJSON));
+                    // await fetch("http://127.0.0.1:8001", {
+                    //   method: "POST",
+                    //   headers: {
+                    //     "Content-Type": "application/json"
+                    //   },
+                    //   body: JSON.stringify(instantJSON)
+                    // });
+                    instance.exportInstantJSON().then(function (instantJSON) {
+                        localStorage.setItem(filePath, JSON.stringify(instantJSON));
+                    });
+                    return [2 /*return*/];
                 });
             }); });
         })
@@ -384,7 +424,7 @@ var CaseFilePage = /** @class */ (function () {
     };
     CaseFilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-casefile',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row >\n    <ion-col col-3 class="sidepane" *ngIf="sidepane">\n         <ion-icon name="arrow-round-back" class="back-icon" (click) = "hideBar()"></ion-icon>\n        <ion-grid>\n          <ion-row class="profile">\n            <ion-col class=\'sidepane-menu\'>\n              <ion-card >\n  <ion-card-header>\n    Case Laws:\n  </ion-card-header>\n      <ion-list>\n        <button ion-item *ngFor ="let caselaw of data.caselaws" (click)="openCaseLaw(caselaw)">\n         {{caselaw}}\n        </button>\n\n\n      </ion-list>\n</ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <!-- <ion-col col-12> -->\n    <ion-col class="content-area" [ngClass]="{\'full-width\': sidepane==false}">\n    	<div class="toolbar">\n    		<ion-grid>\n          <ion-row>\n            <ion-col col-6>\n              \n\n              <button ion-button *ngIf="peshi" (click)="init()" >View Case File</button>\n              <button ion-button *ngIf="!peshi" (click)="viewPeshi()">View Peshi</button>\n              <button ion-button (click)="showBar()">Case Laws</button>\n            </ion-col>\n         \n            <ion-col col-6>\n              <button ion-button float-right (click)="close()">Close</button>\n              <button ion-button float-right (click)="fullscreen()">Fullscreen</button>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n    	</div>\n    	<div class="pdf-view">\n    		<ion-card>\n\n  <ion-card-content>\n   <div class="viewer">\n     <!--  <pdf-viewer [src]="./assets/docs/example.pdf" [render-text]="true" style="display: block;">\n      </pdf-viewer> -->\n    <!--   <object [data]="filePath | safe" width="100%" height="100%" type=\'application/pdf\'>\n   <p>Sorry, the PDF couldn\'t be displayed :(</p>\n </object> -->\n    <div id="pspdfkit" style="width: 100%; height: 100%;"></div>\n   </div>\n  </ion-card-content>\n\n</ion-card>\n    	</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/,
+            selector: 'page-casefile',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row >\n    <ion-col col-3 class="sidepane" *ngIf="sidepane">\n         <ion-icon name="arrow-round-back" class="back-icon" (click) = "hideBar()"></ion-icon>\n        <ion-grid>\n          <ion-row class="profile">\n            <ion-col class=\'sidepane-menu\'>\n              <ion-card >\n  <ion-card-header>\n    Case Laws:\n  </ion-card-header>\n      <ion-list>\n        <button ion-item *ngFor ="let caselaw of data.caselaws" (click)="openCaseLaw(caselaw)">\n         {{caselaw}}\n        </button>\n\n\n      </ion-list>\n</ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <!-- <ion-col col-12> -->\n    <ion-col class="content-area" [ngClass]="{\'full-width\': sidepane==false}">\n    	<div class="toolbar">\n    		<ion-grid>\n          <ion-row>\n            <ion-col col-6>\n              \n\n              <button ion-button *ngIf="peshi" (click)="init()" >View Case File</button>\n              <button ion-button *ngIf="!peshi" (click)="viewPeshi()">View Peshi</button>\n              <button ion-button *ngIf="!sidepane" (click)="showBar()">Case Laws</button>\n            </ion-col>\n         \n            <ion-col col-6>\n              <button ion-button float-right (click)="close()">Close</button>\n              <button ion-button float-right (click)="fullscreen()">Fullscreen</button>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n    	</div>\n    	<div class="pdf-view">\n    		<ion-card>\n\n  <ion-card-content>\n   <div class="viewer">\n     <!--  <pdf-viewer [src]="./assets/docs/example.pdf" [render-text]="true" style="display: block;">\n      </pdf-viewer> -->\n    <!--   <object [data]="filePath | safe" width="100%" height="100%" type=\'application/pdf\'>\n   <p>Sorry, the PDF couldn\'t be displayed :(</p>\n </object> -->\n    <div id="pspdfkit" style="width: 100%; height: 100%;"></div>\n   </div>\n  </ion-card-content>\n\n</ion-card>\n    	</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */]])
     ], CaseFilePage);
@@ -422,7 +462,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_dashboard_dashboard__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_casefile_casefile__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__safe_pipe__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__safe_pipe__ = __webpack_require__(272);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__ = __webpack_require__(196);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -564,7 +604,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 271:
+/***/ 272:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
