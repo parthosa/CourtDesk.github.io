@@ -826,7 +826,7 @@ var LoginPage = /** @class */ (function () {
         // If you're using the username field with or without email, make
         // sure to add it to the type
         this.account = {
-            type: 'LR',
+            type: 'CS',
             username: 'testjudge',
             password: 'test'
         };
