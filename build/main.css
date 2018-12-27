@@ -25807,7 +25807,7 @@ page-upload-legislation form {
 
 page-dashboard ion-grid.page-grid {
   padding: 0 !important;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 page-dashboard ion-grid.page-grid ion-row.page-row {
