@@ -25744,6 +25744,67 @@ page-casefile .viewer {
   overflow: scroll;
 }
 
+page-draft-peshi div#editor-wrapper {
+  height: 80%;
+  /* overflow-y: scroll; */
+}
+
+page-draft-peshi div#editor-wrapper div#editor {
+  /* overflow-y: scroll; */
+  height: 88%;
+}
+
+page-draft-peshi .ql-toolbar.ql-snow {
+  height: 12%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+page-upload-caselaw ion-label {
+  white-space: normal;
+}
+
+page-upload-caselaw .scroll-content {
+  overflow-y: hidden;
+}
+
+page-upload-caselaw .form-wrapper {
+  height: 80%;
+  overflow-y: scroll;
+}
+
+page-upload-caselaw form {
+  height: 100%;
+}
+
+page-upload-legislation ion-label {
+  white-space: normal;
+}
+
+page-upload-legislation .scroll-content {
+  overflow-y: hidden;
+}
+
+page-upload-legislation .form-wrapper {
+  height: 80%;
+  overflow-y: scroll;
+}
+
+page-upload-legislation form {
+  height: 100%;
+}
+
 page-dashboard ion-grid.page-grid {
   padding: 0 !important;
   height: 100vh;
@@ -25830,7 +25891,7 @@ page-dashboard .doc-list {
 }
 
 page-dashboard .doc-list p {
-  width: 33.33%;
+  white-space: normal;
 }
 
 page-dashboard .title p {
@@ -25876,6 +25937,23 @@ page-dashboard button.not-uploaded .doc-list p {
 
 page-dashboard button.hidden {
   display: none;
+}
+
+page-court-staff ion-label {
+  white-space: normal;
+}
+
+page-court-staff .scroll-content {
+  overflow-y: hidden;
+}
+
+page-court-staff .form-wrapper {
+  height: 80%;
+  overflow-y: scroll;
+}
+
+page-court-staff form {
+  height: 100%;
 }
 
 page-login ion-grid {

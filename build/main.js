@@ -8,7 +8,7 @@ webpackJsonp([1],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CourtStaffModal; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__casefile_casefile__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__casefile_casefile__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -21,6 +21,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+// import { data  } from '../../data';
 /**
  * Generated class for the DashboardPage page.
  *
@@ -36,68 +37,140 @@ var DashboardPage = /** @class */ (function () {
                 "courtNumber": "23",
                 "roster": "Banking Writs and Petition",
                 "bench": "HMJ SM",
-                "casefiles": [
-                    {
-                        "fileUploaded": true,
-                        "number": "01",
-                        "name": "CM(M) 671 of 2016",
-                        "lastHearingDate": "04-08-2018",
-                        "advocates": "Sanjeev Bhandari,Advocate; Amit Dhali,Advocate",
-                        "caselaws": [
-                            "CS(OS) No. 4095 OF 2014 GOLF TECHNOLOGIES (P) LTD VS AXIS BANK LTD. _ ORS.pdf",
-                            "Maya Devi vs Lalta Prasad .pdf",
-                            " UNITED BANK OF INDIA VS SATYAWATI TONDON AND OTHERS.pdf"
-                        ],
-                        "legislations": [
-                            " UNITED BANK OF INDIA VS SATYAWATI TONDON AND OTHERS.pdf"
-                        ]
-                    },
-                    {
-                        "fileUploaded": false,
-                        "number": "02",
-                        "name": "WP (C) No. 613 of 2018",
-                        "lastHearingDate": "13-09-2018",
-                        "advocates": "Rajeeve Mehra,Advocate; Pushkar Sood,Advocate",
-                        "caselaws": [
-                            "LPA 699 OF 2015 AGARWAL TRACOM PVT LTD VS PUNJAB NATIONAL BANK AND ORS.pdf"
-                        ],
-                        "legislations": [
-                            "Maya Devi vs Lalta Prasad .pdf"
-                        ]
-                    },
-                    {
-                        "fileUploaded": false,
-                        "number": "03",
-                        "name": "SLP(C) NO. 18713 OF 2016",
-                        "lastHearingDate": "21-10-2018",
-                        "advocates": "Sanjeev Bhandari,Advocate; Amit Dhali,Advocate",
-                        "caselaws": [
-                            "Maya Devi vs Lalta Prasad .pdf"
-                        ],
-                        "legislations": [
-                            "CS(OS) No. 4095 OF 2014 GOLF TECHNOLOGIES (P) LTD VS AXIS BANK LTD. _ ORS.pdf",
-                        ]
-                    },
-                    {
-                        "fileUploaded": true,
-                        "number": "04",
-                        "name": "WP (C) No. 854 of 2018",
-                        "lastHearingDate": "10-10-2018",
-                        "advocates": "Rajeeve Mehra,Advocate; Pushkar Sood,Advocate",
-                        "caselaws": [
-                            "CIVIL APPEAL NO. 5990 OF 2010 UNITED BANK OF INDIA VS SATYAWATI TONDON AND OTHERS.pdf",
-                            "CS(OS) No. 4095 OF 2014 GOLF TECHNOLOGIES (P) LTD VS AXIS BANK LTD. _ ORS.pdf",
-                            "W.P(C) 4344 OF 2015 ONIL SADH VS FEDERAL BANK LTD AND ORS.pdf"
-                        ],
-                        "legislations": [
-                            "CS(OS) No. 4095 OF 2014 GOLF TECHNOLOGIES (P) LTD VS AXIS BANK LTD. _ ORS.pdf",
-                        ]
-                    }
-                ]
+                "casefiles": {
+                    "supplementary": [
+                        {
+                            "fileUploaded": true,
+                            "itemNo": "01",
+                            "caseNo": "CM(M) 671 of 2016",
+                            "matter": "Fresh Matter",
+                            "party": "Joginder Singh Vs. Rekha Gupta",
+                            // "lastHearingDate": "04-08-2018",
+                            "petitionerAdvocate": "Sanjeev Bhandari,Advocate",
+                            "respondentAdvocate": "Amit Dhali,Advocate",
+                            "caselaws": [
+                                "CS(OS) No. 4095 OF 2014 GOLF TECHNOLOGIES (P) LTD VS AXIS BANK LTD. _ ORS.pdf",
+                                "Maya Devi vs Lalta Prasad .pdf",
+                                " UNITED BANK OF INDIA VS SATYAWATI TONDON AND OTHERS.pdf"
+                            ],
+                            "legislations": [
+                                "Ammendment to SARFAESI Act.pdf",
+                                "Securitisation-Act.pdf"
+                            ],
+                            "notes": "Tenant under SARFAESI."
+                        },
+                        {
+                            "fileUploaded": false,
+                            "itemNo": "02",
+                            "caseNo": "WP (C) No. 613 of 2018",
+                            "matter": "Fresh Matter",
+                            "party": "Rahul Anand Vs. Corporation Bank",
+                            // "lastHearingDate": "13-09-2018",
+                            "petitionerAdvocate": "Rajeeve Mehra,Advocate",
+                            "respondentAdvocate": "Pushkar Sood,Advocate",
+                            "caselaws": [
+                                "LPA 699 OF 2015 AGARWAL TRACOM PVT LTD VS PUNJAB NATIONAL BANK AND ORS.pdf"
+                            ],
+                            "legislations": [
+                                "Ammendment to SARFAESI Act.pdf",
+                                "Securitisation-Act.pdf"
+                            ],
+                            "notes": ""
+                        },
+                        {
+                            "fileUploaded": false,
+                            "itemNo": "03",
+                            "caseNo": "SLP(C) NO. 18713 OF 2016",
+                            "matter": "Fresh Matter",
+                            "party": "Maninder Singh Vs. Rajinder Kumar Malhotra &amp; ors.",
+                            // "lastHearingDate": "21-10-2018",
+                            "petitionerAdvocate": "Sanjeev Bhandari,Advocate",
+                            "respondentAdvocate": "Amit Dhali,Advocate",
+                            "caselaws": [
+                                "Maya Devi vs Lalta Prasad .pdf"
+                            ],
+                            "legislations": [
+                                "Ammendment to SARFAESI Act.pdf",
+                                "Securitisation-Act.pdf"
+                            ],
+                            "notes": ""
+                        },
+                        {
+                            "fileUploaded": true,
+                            "itemNo": "04",
+                            "caseNo": "WP (C) No. 854 of 2018",
+                            "matter": "Fresh Matter",
+                            "party": "Ambica Timber Trade P. Ltd. Vs. Corporation Bank",
+                            // "lastHearingDate": "10-10-2018",
+                            "petitionerAdvocate": "Rajeeve Mehra,Advocate",
+                            "respondentAdvocate": "Pushkar Sood,Advocate",
+                            "caselaws": [
+                                "CIVIL APPEAL NO. 5990 OF 2010 UNITED BANK OF INDIA VS SATYAWATI TONDON AND OTHERS.pdf",
+                                "CS(OS) No. 4095 OF 2014 GOLF TECHNOLOGIES (P) LTD VS AXIS BANK LTD. _ ORS.pdf",
+                                "W.P(C) 4344 OF 2015 ONIL SADH VS FEDERAL BANK LTD AND ORS.pdf"
+                            ],
+                            "legislations": [
+                                "Ammendment to SARFAESI Act.pdf",
+                                "Securitisation-Act.pdf"
+                            ],
+                            "notes": ""
+                        }
+                    ],
+                    "advance": [
+                        {
+                            "fileUploaded": true,
+                            "itemNo": "01",
+                            "caseNo": "WP(C) NO. 5878 OF 2017",
+                            "matter": "For Direction",
+                            "party": "Rajesh Manchanda Vs. Canara Bank & ORS.",
+                            // "lastHearingDate": "04-08-2018",
+                            "petitionerAdvocate": "Sanjeev Bhandari,Advocate",
+                            "respondentAdvocate": "Amit Dhali,Advocate",
+                            "caselaws": [],
+                            "legislations": [
+                                "Ammendment to SARFAESI Act.pdf",
+                                "Securitisation-Act.pdf"
+                            ],
+                            "notes": "Tenant under SARFAESI."
+                        },
+                        {
+                            "fileUploaded": true,
+                            "itemNo": "02",
+                            "caseNo": "WP(C) NO. 6653 OF 2017",
+                            "matter": "After Notice",
+                            "party": "Rajesh Gems And Jewels P. LTD. Vs. Indian Overseas Bank",
+                            // "lastHearingDate": "04-08-2018",
+                            "petitionerAdvocate": "Rajeeve Mehra,Advocate",
+                            "respondentAdvocate": "Pushkar Sood,Advocate",
+                            "caselaws": [],
+                            "legislations": [
+                                "Ammendment to SARFAESI Act.pdf",
+                                "Securitisation-Act.pdf"
+                            ],
+                            "notes": ""
+                        },
+                        {
+                            "fileUploaded": true,
+                            "itemNo": "03",
+                            "caseNo": "WP(C) NO. 6742 OF 2018",
+                            "matter": "For Direction",
+                            "party": "Sonu Grover & Anr. Vs. Allahabad Bank",
+                            // "lastHearingDate": "04-08-2018",
+                            "petitionerAdvocate": "Sanjeev Bhandari,Advocate",
+                            "respondentAdvocate": "Amit Dhali,Advocate",
+                            "caselaws": [],
+                            "legislations": [
+                                "Ammendment to SARFAESI Act.pdf",
+                                "Securitisation-Act.pdf"
+                            ],
+                            "notes": "Tenant under SARFAESI."
+                        },
+                    ]
+                }
             },
             {
                 "courtNumber": "34",
-                "roster": "Criminal Cases",
+                "roster": "Criminal Appeals",
                 "bench": "HMJ SB,HMJ SM",
                 "casefiles": []
             }
@@ -143,7 +216,7 @@ var DashboardPage = /** @class */ (function () {
     };
     DashboardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dashboard',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/dashboard.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row class="page-row">\n    <ion-col col-3 class="sidepane">\n    		<ion-grid>\n  				<ion-row class="profile">\n  					<ion-col>\n							<img src="./assets/imgs/default_bl.png">\n  						<h4>Welcome, <strong>{{ welcomeString }}</strong></h4>\n  						<!-- <p>Advocate</p> -->\n  				  </ion-col>\n  				</ion-row>\n  				<ion-row>\n  					<ion-col class=\'sidepane-menu\'>\n              <ion-card *ngFor="let court of caseData" (click)="openCourt(court)">\n                <ion-card-header>\n                  Court Room No. {{court.courtNumber}}\n                </ion-card-header>\n                    <ion-list>\n                      <button ion-item>\n                        <strong>Roster</strong> : {{court.roster}}\n                      </button>\n\n                      <button ion-item>\n                         <strong>Bench</strong> : {{court.bench}}\n                      </button>\n\n                    </ion-list>\n              </ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <ion-col col-9>\n      <div class="logout-button">\n        <p id="date">\n          {{ date }}\n        </p>\n       <button ion-button (click)="logout()">Logout</button>\n     </div>\n      <h3 class="heading">Court Room {{ currentCourt.courtNumber }}</h3>\n    	<div class=\'document-list\'>\n    		<ion-card>\n <ion-card-header>\n    Supplementary Cases\n  </ion-card-header>\n  <ion-list>\n    <button ion-item>\n      <div class="title doc-list">\n        <ion-grid>\n          <ion-row>\n            <ion-col col-1>\n                <p>Case No.</p>\n            </ion-col>\n            <ion-col col-3>\n                <p>Case Name</p>\n            </ion-col>\n            <ion-col col-5>\n              <p>Advocates Appearing</p>\n            </ion-col>\n            <ion-col col-2>\n                <p>Last Date of Hearing</p>\n            </ion-col>\n</ion-row>\n</ion-grid>\n      </div>\n    </button>\n\n     <button ion-item *ngFor ="let casefile of currentCourt.casefiles" [ngClass]="{\'uploaded\': casefile.fileUploaded && account.type==\'CS\' , \'not-uploaded\':!casefile.fileUploaded && account.type==\'CS\', \'hidden\': !casefile.fileUploaded && !(account.type==\'CS\') }" (click)="open(casefile)">\n      <div class="doc-list">\n         <ion-grid>\n          <ion-row >\n       <ion-col col-1>\n                <p> {{casefile.number}} </p>\n            </ion-col>\n            <ion-col col-3>\n                <p> {{casefile.name}} </p>\n            </ion-col>\n            <ion-col col-5>\n              <p>\n                {{casefile.advocates}}\n                <!-- <span *ngFor="let advocate of data.advocates;let isLast=last">\n                  {{advocate}}{{isLast ? \'\' : \'; \'}}\n                </span> -->\n              </p>\n            </ion-col>\n            <ion-col col-2>\n                <p> {{casefile.lastHearingDate}} </p>\n            </ion-col>\n      </ion-row>\n    </ion-grid>\n      </div>\n    </button>\n    <button ion-item *ngIf="currentCourt.casefiles.length == 0">\n          <div class="no-files">\n            <p>No CaseFiles</p> \n            </div>\n    </button>\n\n  </ion-list>\n</ion-card>\n\n  <ion-card>\n <ion-card-header>\n    Advance Cases\n  </ion-card-header>\n  <ion-list>\n    <button ion-item>\n      <div class="title doc-list">\n        <ion-grid>\n          <ion-row>\n            <ion-col col-1>\n                <p>Case No.</p>\n            </ion-col>\n            <ion-col col-3>\n                <p>Case Name</p>\n            </ion-col>\n            <ion-col col-5>\n              <p>Advocates Appearing</p>\n            </ion-col>\n            <ion-col col-2>\n                <p>Last Date of Hearing</p>\n            </ion-col>\n</ion-row>\n</ion-grid>\n      </div>\n    </button>\n\n     <button ion-item *ngFor ="let casefile of currentCourt.casefiles" [ngClass]="{\'hidden\': !casefile.fileUploaded }" (click)="open(casefile)">\n      <div class="doc-list">\n         <ion-grid>\n          <ion-row >\n       <ion-col col-1>\n                <p> {{casefile.number}} </p>\n            </ion-col>\n            <ion-col col-3>\n                <p> {{casefile.name}} </p>\n            </ion-col>\n            <ion-col col-5>\n              <p>\n                {{casefile.advocates}}\n                <!-- <span *ngFor="let advocate of casefile.advocates;let isLast=last">\n                  {{advocate}}{{isLast ? \'\' : \'; \'}}\n                </span> -->\n              </p>\n            </ion-col>\n            <ion-col col-2>\n                <p> {{casefile.lastHearingDate}} </p>\n            </ion-col>\n      </ion-row>\n    </ion-grid>\n      </div>\n    </button>\n    <button ion-item *ngIf="currentCourt.casefiles.length == 0">\n          <div class="no-files">\n            <p>No CaseFiles</p> \n            </div>\n    </button>\n\n  </ion-list>\n</ion-card>\n\n</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/dashboard.html"*/,
+            selector: 'page-dashboard',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/dashboard.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row class="page-row">\n    <ion-col col-3 class="sidepane">\n    		<ion-grid>\n  				<ion-row class="profile">\n  					<ion-col>\n							<img src="./assets/imgs/default_bl.png">\n  						<h4>Welcome, <strong>{{ welcomeString }}</strong></h4>\n  						<!-- <p>Advocate</p> -->\n  				  </ion-col>\n  				</ion-row>\n  				<ion-row>\n  					<ion-col class=\'sidepane-menu\'>\n              <ion-card *ngFor="let court of caseData" (click)="openCourt(court)">\n                <ion-card-header>\n                  Court Room No. {{court.courtNumber}}\n                </ion-card-header>\n                    <ion-list>\n                      <button ion-item>\n                        <strong>Roster</strong> : {{court.roster}}\n                      </button>\n\n                      <button ion-item>\n                         <strong>Bench</strong> : {{court.bench}}\n                      </button>\n\n                    </ion-list>\n              </ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <ion-col col-9>\n      <div class="logout-button">\n        <p id="date">\n          {{ date }}\n        </p>\n       <button ion-button (click)="logout()">Logout</button>\n     </div>\n      <h3 class="heading">Court Room {{ currentCourt.courtNumber }}</h3>\n    	<div class=\'document-list\'>\n    		<ion-card>\n <ion-card-header>\n    Supplementary Cases\n  </ion-card-header>\n  <ion-list>\n    <button ion-item>\n      <div class="title doc-list">\n        <ion-grid>\n          <ion-row>\n           <ion-col col-1>\n                <p>Item No.</p>\n            </ion-col>\n            <ion-col col-2>\n                <p>Case No.</p>\n            </ion-col>\n            <ion-col col-1>\n              <p>Matter</p>\n            </ion-col>\n            <ion-col col-2>\n                <p>Party</p>\n            </ion-col>\n            <ion-col col-2>\n                <p>Petitioner Advocate</p>\n            </ion-col>\n            <ion-col col-2>\n                <p>Respondent Advocate</p>\n            </ion-col>\n            <ion-col col-2>\n                <p>Notes</p>\n            </ion-col>\n</ion-row>\n</ion-grid>\n      </div>\n    </button>\n\n     <button ion-item *ngFor ="let casefile of currentCourt.casefiles.supplementary" [ngClass]="{\'uploaded\': casefile.fileUploaded && account.type==\'CS\' , \'not-uploaded\':!casefile.fileUploaded && account.type==\'CS\', \'hidden\': !casefile.fileUploaded && !(account.type==\'CS\') }" (click)="open(casefile)">\n      <div class="doc-list">\n         <ion-grid>\n          <ion-row >\n      <ion-col col-1>\n                <p> {{casefile.itemNo}} </p>\n            </ion-col>\n            <ion-col col-2>\n                <p> {{casefile.caseNo}} </p>\n            </ion-col>\n            <ion-col col-1>\n              <p> {{casefile.matter}} </p>\n            </ion-col>\n            <ion-col col-2>\n                <p> {{casefile.party}} </p>\n            </ion-col>\n            <ion-col col-2>\n                <p> {{casefile.petitionerAdvocate}} </p>\n            </ion-col>\n            <ion-col col-2>\n                <p> {{casefile.respondentAdvocate}} </p>\n            </ion-col>\n            <ion-col col-2>\n                <p> {{casefile.notes}} </p>\n            </ion-col>\n      </ion-row>\n    </ion-grid>\n      </div>\n    </button>\n    <button ion-item *ngIf="currentCourt.casefiles.supplementary.length == 0">\n          <div class="no-files">\n            <p>No CaseFiles</p> \n            </div>\n    </button>\n\n  </ion-list>\n</ion-card>\n\n  <ion-card>\n <ion-card-header>\n    Advance Cases\n  </ion-card-header>\n  <ion-list>\n    <button ion-item>\n      <div class="title doc-list">\n        <ion-grid>\n          <ion-row>\n            <ion-col col-1>\n                <p>Item No.</p>\n            </ion-col>\n            <ion-col col-2>\n                <p>Case No.</p>\n            </ion-col>\n            <ion-col col-1>\n              <p>Matter</p>\n            </ion-col>\n            <ion-col col-2>\n                <p>Party</p>\n            </ion-col>\n            <ion-col col-2>\n                <p>Petitioner Advocate</p>\n            </ion-col>\n            <ion-col col-2>\n                <p>Respondent Advocate</p>\n            </ion-col>\n            <ion-col col-2>\n                <p>Notes</p>\n            </ion-col>\n</ion-row>\n</ion-grid>\n      </div>\n    </button>\n\n     <button ion-item *ngFor ="let casefile of currentCourt.casefiles.advance" [ngClass]="{\'hidden\': !casefile.fileUploaded }" (click)="open(casefile)">\n      <div class="doc-list">\n         <ion-grid>\n          <ion-row >\n       <ion-col col-1>\n                <p> {{casefile.itemNo}} </p>\n            </ion-col>\n            <ion-col col-2>\n                <p> {{casefile.caseNo}} </p>\n            </ion-col>\n            <ion-col col-1>\n              <p> {{casefile.matter}} </p>\n            </ion-col>\n            <ion-col col-2>\n                <p> {{casefile.party}} </p>\n            </ion-col>\n            <ion-col col-2>\n                <p> {{casefile.petitionerAdvocate}} </p>\n            </ion-col>\n            <ion-col col-2>\n                <p> {{casefile.respondentAdvocate}} </p>\n            </ion-col>\n            <ion-col col-2>\n                <p> {{casefile.notes}} </p>\n            </ion-col>\n      </ion-row>\n    </ion-grid>\n      </div>\n    </button>\n    <button ion-item *ngIf="currentCourt.casefiles.advance.length == 0">\n          <div class="no-files">\n            <p>No CaseFiles</p> \n            </div>\n    </button>\n\n  </ion-list>\n</ion-card>\n\n</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/dashboard.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
     ], DashboardPage);
@@ -186,7 +259,7 @@ var CourtStaffModal = /** @class */ (function () {
     };
     CourtStaffModal = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-court-staff',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/court-staff-modal.html"*/'\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Verify the Case File Details\n    </ion-title>\n    <ion-buttons start>\n      <button ion-button (click)="dismiss()">\n        <!-- <span ion-text color="primary" showWhen="ios">Cancel</span> -->\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <form (submit)="save($event)">\n    <ion-list>\n      <ion-item>\n        <ion-label fixed>Case Number</ion-label>\n        <ion-input type="text" [(ngModel)]="casefile.number" name="number"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label fixed>Case Name</ion-label>\n        <ion-input type="text" [(ngModel)]="casefile.name" name="name"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label fixed>Last Hearing Date</ion-label>\n        <ion-input type="text" [(ngModel)]="casefile.lastHearingDate" name="lastHearingDate"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label fixed>Advocates Appearing</ion-label>\n        <ion-input type="text" [(ngModel)]="casefile.advocates" name="advocates"></ion-input>\n      </ion-item>\n\n       <ion-item>\n        <ion-label fixed>Notes</ion-label>\n        <ion-textarea type="text" [(ngModel)]="casefile.notes" name="notes" placeholder="Type your notes here"></ion-textarea>\n      </ion-item>\n\n       <ion-item id="fileUpload">\n        <ion-label><button ion-button (click)="uploadFile()">Upload</button></ion-label>\n        <ion-input type="text" [(ngModel)]="caseFileName" name="caseFileName" readonly></ion-input>\n        <!-- <p id="caseFileName">C:\fakepath\adas</p> -->\n         <ion-input id="fileInput" type="file" name="file" accept="application/pdf" hidden></ion-input>\n      </ion-item>\n\n      <div padding>\n        <ion-grid>\n          <ion-row>\n            <ion-col col-3 offset-6 >\n              <button ion-button color="primary"  type="submit" block>Save\n              </button>\n            </ion-col>\n            <ion-col col-3>\n              <button ion-button color="primary"  (click)="dismiss()" block>Cancel\n              </button>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </div>\n\n    </ion-list>\n  </form>\n</ion-content>'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/court-staff-modal.html"*/,
+            selector: 'page-court-staff',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/court-staff-modal.html"*/'\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Verify the Case File Details\n    </ion-title>\n    <ion-buttons start>\n      <button ion-button (click)="dismiss()">\n        <!-- <span ion-text color="primary" showWhen="ios">Cancel</span> -->\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <form (submit)="save($event)">\n  <div class="form-wrapper">\n    <ion-list>\n       <ion-item>\n        <ion-label fixed>Item Number</ion-label>\n        <ion-input type="text" [(ngModel)]="casefile.itemNo" name="itemNo"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label fixed>Case Number</ion-label>\n        <ion-input type="text" [(ngModel)]="casefile.caseNo" name="caseNo"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label fixed>Matter</ion-label>\n        <ion-input type="text" [(ngModel)]="casefile.matter" name="matter"></ion-input>\n      </ion-item>\n       <ion-item>\n        <ion-label fixed>Party</ion-label>\n        <ion-input type="text" [(ngModel)]="casefile.party" name="party"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label fixed>Petitioner Advocate</ion-label>\n        <ion-input type="text" [(ngModel)]="casefile.petitionerAdvocate" name="petitionerAdvocate"></ion-input>\n      </ion-item>\n\n\n      <ion-item>\n        <ion-label fixed>Respondent Advocate</ion-label>\n        <ion-input type="text" [(ngModel)]="casefile.respondentAdvocate" name="respondentAdvocate"></ion-input>\n      </ion-item>\n\n       <ion-item>\n        <ion-label fixed>Notes</ion-label>\n        <ion-textarea type="text" [(ngModel)]="casefile.notes" name="notes" placeholder="Type your notes here"></ion-textarea>\n      </ion-item>\n\n       <ion-item id="fileUpload">\n        <ion-label><button ion-button (click)="uploadFile()">Upload</button></ion-label>\n        <ion-input type="text" [(ngModel)]="caseFileName" name="caseFileName" readonly></ion-input>\n        <!-- <p id="caseFileName">C:\fakepath\adas</p> -->\n         <ion-input id="fileInput" type="file" name="file" accept="application/pdf" hidden></ion-input>\n      </ion-item>\n\n\n    </ion-list>\n  </div>\n      <div padding>\n        <ion-grid>\n          <ion-row>\n            <ion-col col-3 offset-6 >\n              <button ion-button color="primary"  type="submit" block>Save\n              </button>\n            </ion-col>\n            <ion-col col-3>\n              <button ion-button color="primary"  (click)="dismiss()" block>Cancel\n              </button>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </div>\n  </form>\n</ion-content>'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/dashboard/court-staff-modal.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
     ], CourtStaffModal);
@@ -316,7 +389,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_welcome_welcome__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_dashboard_dashboard__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__ = __webpack_require__(196);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -332,6 +405,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // import { MaterializeModule } from "angular2-materialize";
+
 
 
 
@@ -355,8 +429,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_8__pages_dashboard_dashboard__["b" /* DashboardPage */],
                 __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__["a" /* CaseFilePage */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_dashboard_dashboard__["a" /* CourtStaffModal */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__["b" /* UploadCaselawModal */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__["c" /* UploadLegislationModal */]
+                __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__["c" /* UploadCaselawModal */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__["d" /* UploadLegislationModal */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__["b" /* DraftPeshiModal */]
                 // PdfViewerModule
             ],
             imports: [
@@ -377,8 +452,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_8__pages_dashboard_dashboard__["b" /* DashboardPage */],
                 __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__["a" /* CaseFilePage */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_dashboard_dashboard__["a" /* CourtStaffModal */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__["b" /* UploadCaselawModal */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__["c" /* UploadLegislationModal */]
+                __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__["c" /* UploadCaselawModal */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__["d" /* UploadLegislationModal */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_casefile_casefile__["b" /* DraftPeshiModal */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__["a" /* StatusBar */],
@@ -469,13 +545,14 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 50:
+/***/ 41:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CaseFilePage; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return UploadCaselawModal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return UploadLegislationModal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return UploadCaselawModal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return UploadLegislationModal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DraftPeshiModal; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(25);
@@ -547,10 +624,13 @@ var CaseFilePage = /** @class */ (function () {
         this.peshi = false;
         this.casefile = this.navParams.get('casefile');
         this.account = this.navParams.get('account');
-        console.log(this.casefile);
+        console.log(this.casefile, this.casefile['caseNo']);
         this.baseUrl = 'https://courtdesk.github.io';
         // this.baseUrl = 'http://127.0.0.1:7070';
         this.removedItems = ["pan", "ink-signature", "image", "stamp", "line", "rectangle", "arrow", "ellipse", "polygon", "polyline"];
+        if (!(this.account.type == "JG")) {
+            this.removedItems.push("annotate", "ink", "highlighter", "note", "text");
+        }
         // console.dir(PSPDFKit);
     }
     CaseFilePage.prototype.ionViewDidLoad = function () {
@@ -566,9 +646,8 @@ var CaseFilePage = /** @class */ (function () {
     CaseFilePage.prototype.loadPDF = function (file) {
         var _this = this;
         this.clearPDF();
-        var filePath = encodeURI(this.casefile['name']) + "/" + file;
+        var filePath = encodeURI(this.casefile['caseNo']) + "/" + file;
         var defaultItems = PSPDFKit.defaultToolbarItems;
-        console.log(defaultItems);
         PSPDFKit.load({
             container: "#pspdfkit",
             pdf: this.baseUrl + "/assets/docs/" + filePath,
@@ -577,7 +656,6 @@ var CaseFilePage = /** @class */ (function () {
             disableWebAssemblyStreaming: true
         })
             .then(function (instance) {
-            console.log(instance);
             instance.setViewState(function (viewState) {
                 return viewState.set("sidebarMode", PSPDFKit.SidebarMode.ANNOTATIONS);
             });
@@ -588,7 +666,6 @@ var CaseFilePage = /** @class */ (function () {
             }
             instance.setToolbarItems(function (items) {
                 return items.map(function (item) {
-                    console.log(item, item.dropdownGroup);
                     if (_this.removedItems.indexOf(item.type) > -1)
                         item.mediaQueries = ['(min-width: 8000px)'];
                     else
@@ -666,7 +743,7 @@ var CaseFilePage = /** @class */ (function () {
     };
     CaseFilePage.prototype.openLegislation = function (legislation) {
         this.peshi = false;
-        this.loadPDF("Caselaw/" + legislation);
+        this.loadPDF("Legislations/" + legislation);
     };
     CaseFilePage.prototype.viewPeshi = function () {
         this.loadPDF("peshi.pdf");
@@ -701,9 +778,13 @@ var CaseFilePage = /** @class */ (function () {
         var modal = this.modalCtrl.create(UploadLegislationModal, { casefile: this.casefile });
         modal.present();
     };
+    CaseFilePage.prototype.draftPeshi = function () {
+        var modal = this.modalCtrl.create(DraftPeshiModal, { casefile: this.casefile });
+        modal.present();
+    };
     CaseFilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-casefile',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row >\n    <ion-col col-3 class="sidepane" *ngIf="caselaws || legislation">\n         <ion-icon name="arrow-round-back" class="back-icon" (click) = "hideBar()"></ion-icon>\n        <ion-grid>\n          <ion-row class="profile">\n            <ion-col class=\'sidepane-menu\'>\n              <ion-card >\n  <ion-card-header>\n    <span *ngIf="caselaws">Case Laws</span>\n    <span *ngIf="legislation">Legislations</span>\n  </ion-card-header>\n      <ion-list *ngIf="caselaws">\n        <button  ion-item *ngFor ="let caselaw of casefile.caselaws" (click)="openCaseLaw(caselaw)">\n         {{caselaw}}\n        </button>\n      </ion-list>\n      <ion-list *ngIf="legislation">\n        <button  ion-item *ngFor ="let legislation of casefile.legislations" (click)="openLegislation(legislation)">\n         {{legislation}}\n        </button>\n      </ion-list>\n      <button ion-fab *ngIf="caselaws && account.type==\'LR\' " (click)="uploadCaseLaw()"><ion-icon name="add"></ion-icon></button>\n      <button ion-fab *ngIf="legislation && account.type==\'LR\'" (click)="uploadLegislation()"><ion-icon name="add"></ion-icon></button>\n</ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <!-- <ion-col col-12> -->\n    <ion-col class="content-area" [ngClass]="{\'full-width\': sidepane==false}">\n    	<div class="toolbar">\n    		<ion-grid>\n          <ion-row>\n            <ion-col col-6 *ngIf="account.type==\'JG\'">\n              \n\n              <button ion-button *ngIf="peshi" (click)="init()" >View Case File</button>\n              <button ion-button *ngIf="!peshi" (click)="viewPeshi()">View Peshi</button>\n              <button ion-button *ngIf="!caselaws" (click)="showBar(\'caselaws\')">Case Laws</button>\n              <button ion-button *ngIf="!legislation" (click)="showBar(\'legislation\')">Legislation</button>\n            </ion-col>\n\n            <ion-col col-6 *ngIf="account.type==\'LR\'">\n              \n\n              <!-- <button ion-button *ngIf="peshi" (click)="init()" >View Case File</button> -->\n              <button ion-button (click)="viewPeshi()">Draft Peshi</button>\n              <button ion-button *ngIf="!caselaws" (click)="showBar(\'caselaws\')">Upload Case Laws</button>\n              <button ion-button *ngIf="!legislation" (click)="showBar(\'legislation\')">Upload Legislation</button>\n            </ion-col>\n         \n            <ion-col col-6 push-6 *ngIf="account.type==\'CS\'">\n              <button ion-button float-right (click)="close()">Close</button>\n              <button ion-button float-right (click)="fullscreen()">Fullscreen</button>\n            </ion-col>\n\n            <ion-col col-6 *ngIf="!(account.type==\'CS\')">\n              <button ion-button float-right (click)="close()">Close</button>\n              <button ion-button float-right (click)="fullscreen()">Fullscreen</button>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n    	</div>\n    	<div class="pdf-view">\n    		<ion-card>\n\n  <ion-card-content>\n   <div class="viewer">\n     <!--  <pdf-viewer [src]="./assets/docs/example.pdf" [render-text]="true" style="display: block;">\n      </pdf-viewer> -->\n    <!--   <object [data]="filePath | safe" width="100%" height="100%" type=\'application/pdf\'>\n   <p>Sorry, the PDF couldn\'t be displayed :(</p>\n </object> -->\n    <div id="pspdfkit" style="width: 100%; height: 100%;"></div>\n   </div>\n  </ion-card-content>\n\n</ion-card>\n    	</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/,
+            selector: 'page-casefile',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/'<!--\n  Generated template for the DashboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content>\n	<ion-grid class="page-grid">\n  <ion-row >\n    <ion-col col-3 class="sidepane" *ngIf="caselaws || legislation">\n         <ion-icon name="arrow-round-back" class="back-icon" (click) = "hideBar()"></ion-icon>\n        <ion-grid>\n          <ion-row class="profile">\n            <ion-col class=\'sidepane-menu\'>\n              <ion-card >\n  <ion-card-header>\n    <span *ngIf="caselaws">Case Laws</span>\n    <span *ngIf="legislation">Legislations</span>\n  </ion-card-header>\n      <ion-list *ngIf="caselaws">\n        <button  ion-item *ngFor ="let caselaw of casefile.caselaws" (click)="openCaseLaw(caselaw)">\n         {{caselaw}}\n        </button>\n      </ion-list>\n      <ion-list *ngIf="legislation">\n        <button  ion-item *ngFor ="let legislation of casefile.legislations" (click)="openLegislation(legislation)">\n         {{legislation}}\n        </button>\n      </ion-list>\n      <button ion-fab *ngIf="caselaws && account.type==\'LR\' " (click)="uploadCaseLaw()"><ion-icon name="add"></ion-icon></button>\n      <button ion-fab *ngIf="legislation && account.type==\'LR\'" (click)="uploadLegislation()"><ion-icon name="add"></ion-icon></button>\n</ion-card>\n  				  </ion-col>\n  				</ion-row>\n  			</ion-grid>\n    </ion-col>\n    <!-- <ion-col col-12> -->\n    <ion-col class="content-area" [ngClass]="{\'full-width\': sidepane==false}">\n    	<div class="toolbar">\n    		<ion-grid>\n          <ion-row>\n            <ion-col col-6 *ngIf="!(account.type==\'LR\')">\n              \n\n              <button ion-button *ngIf="peshi" (click)="init()" >View Case File</button>\n              <button ion-button *ngIf="!peshi" (click)="viewPeshi()">View Peshi</button>\n              <button ion-button *ngIf="!caselaws" (click)="showBar(\'caselaws\')">Case Laws</button>\n              <button ion-button *ngIf="!legislation" (click)="showBar(\'legislation\')">Legislation</button>\n            </ion-col>\n\n            <ion-col col-6 *ngIf="account.type==\'LR\'">\n              \n\n              <!-- <button ion-button *ngIf="peshi" (click)="init()" >View Case File</button> -->\n              <button ion-button (click)="draftPeshi()">Draft Peshi</button>\n              <button ion-button *ngIf="!caselaws" (click)="showBar(\'caselaws\')">Upload Case Laws</button>\n              <button ion-button *ngIf="!legislation" (click)="showBar(\'legislation\')">Upload Legislation</button>\n            </ion-col>\n       <!--   \n            <ion-col col-6 push-6 *ngIf="account.type==\'CS\'">\n              <button ion-button float-right (click)="close()">Close</button>\n              <button ion-button float-right (click)="fullscreen()">Fullscreen</button>\n            </ion-col> -->\n\n            <ion-col col-6 >\n              <button ion-button float-right (click)="close()">Close</button>\n              <button ion-button float-right (click)="fullscreen()">Fullscreen</button>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n    	</div>\n    	<div class="pdf-view">\n    		<ion-card>\n\n  <ion-card-content>\n   <div class="viewer">\n     <!--  <pdf-viewer [src]="./assets/docs/example.pdf" [render-text]="true" style="display: block;">\n      </pdf-viewer> -->\n    <!--   <object [data]="filePath | safe" width="100%" height="100%" type=\'application/pdf\'>\n   <p>Sorry, the PDF couldn\'t be displayed :(</p>\n </object> -->\n    <div id="pspdfkit" style="width: 100%; height: 100%;"></div>\n   </div>\n  </ion-card-content>\n\n</ion-card>\n    	</div>\n    </ion-col>\n  </ion-row>\n </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/casefile.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["c" /* DomSanitizer */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
     ], CaseFilePage);
@@ -711,10 +792,11 @@ var CaseFilePage = /** @class */ (function () {
 }());
 
 var UploadCaselawModal = /** @class */ (function () {
-    function UploadCaselawModal(navCtrl, navParams, viewCtrl) {
+    function UploadCaselawModal(navCtrl, navParams, viewCtrl, toastCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
+        this.toastCtrl = toastCtrl;
         this.caselaw = {
             title: '',
             citation: ''
@@ -739,23 +821,30 @@ var UploadCaselawModal = /** @class */ (function () {
     UploadCaselawModal.prototype.save = function ($event) {
         $event.preventDefault();
         this.casefile.caselaws.push(this.caselaw.title);
+        var toast = this.toastCtrl.create({
+            message: 'Login Success',
+            duration: 3000,
+            position: 'top'
+        });
+        toast.present();
         this.dismiss();
         // console.log(this.fileInput.files[0]);
     };
     UploadCaselawModal = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-upload-caselaw',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/upload-caselaw.html"*/'\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Upload New Case Law\n    </ion-title>\n    <ion-buttons start>\n      <button ion-button (click)="dismiss()">\n        <!-- <span ion-text color="primary" showWhen="ios">Cancel</span> -->\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <form (submit)="save($event)">\n    <ion-list>\n      <ion-item>\n        <ion-label fixed>Case Title</ion-label>\n        <ion-input type="text" [(ngModel)]="caselaw.title" name="title" placeholder="Enter Case Title"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label fixed>Citation</ion-label>\n        <ion-input type="text" [(ngModel)]="caselaw.citation" name="citation" placeholder="Enter Citation"></ion-input>\n      </ion-item>\n\n\n       <ion-item id="fileUpload">\n        <ion-label><button ion-button (click)="uploadFile()">Upload</button></ion-label>\n        <ion-input type="text" [(ngModel)]="caseLawName" name="caseLawName" readonly></ion-input>\n        <!-- <p id="caseFileName">C:\fakepath\adas</p> -->\n         <ion-input id="fileInput" type="file" name="file" accept="application/pdf" hidden></ion-input>\n      </ion-item>\n\n      <div padding>\n        <ion-grid>\n          <ion-row>\n            <ion-col col-3 offset-6 >\n              <button ion-button color="primary"  type="submit" block>Save\n              </button>\n            </ion-col>\n            <ion-col col-3>\n              <button ion-button color="primary"  (click)="dismiss()" block>Cancel\n              </button>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </div>\n\n    </ion-list>\n  </form>\n</ion-content>'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/upload-caselaw.html"*/,
+            selector: 'page-upload-caselaw',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/upload-caselaw.html"*/'\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Upload New Case Law\n    </ion-title>\n    <ion-buttons start>\n      <button ion-button (click)="dismiss()">\n        <!-- <span ion-text color="primary" showWhen="ios">Cancel</span> -->\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <form (submit)="save($event)">\n    <div class="form-wrapper">\n    <ion-list>\n      <ion-item>\n        <ion-label fixed>Case Title</ion-label>\n        <ion-input type="text" [(ngModel)]="caselaw.title" name="title" placeholder="Enter Case Title"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label fixed>Citation</ion-label>\n        <ion-input type="text" [(ngModel)]="caselaw.citation" name="citation" placeholder="Enter Citation"></ion-input>\n      </ion-item>\n\n\n       <ion-item id="fileUpload">\n        <ion-label><button ion-button (click)="uploadFile()">Upload</button></ion-label>\n        <ion-input type="text" [(ngModel)]="caseLawName" name="caseLawName" readonly></ion-input>\n        <!-- <p id="caseFileName">C:\fakepath\adas</p> -->\n         <ion-input id="fileInput" type="file" name="file" accept="application/pdf" hidden></ion-input>\n      </ion-item>\n    </ion-list>\n  </div>\n      <div padding>\n        <ion-grid>\n          <ion-row>\n            <ion-col col-3 offset-6 >\n              <button ion-button color="primary"  type="submit" block>Save\n              </button>\n            </ion-col>\n            <ion-col col-3>\n              <button ion-button color="primary"  (click)="dismiss()" block>Cancel\n              </button>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </div>\n  </form>\n</ion-content>'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/upload-caselaw.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]])
     ], UploadCaselawModal);
     return UploadCaselawModal;
 }());
 
 var UploadLegislationModal = /** @class */ (function () {
-    function UploadLegislationModal(navCtrl, navParams, viewCtrl) {
+    function UploadLegislationModal(navCtrl, navParams, viewCtrl, toastCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
+        this.toastCtrl = toastCtrl;
         this.legislation = {
             title: '',
             section: '',
@@ -781,16 +870,52 @@ var UploadLegislationModal = /** @class */ (function () {
     UploadLegislationModal.prototype.save = function ($event) {
         $event.preventDefault();
         this.casefile.legislations.push(this.legislation.title);
+        var toast = this.toastCtrl.create({
+            message: 'Login Success',
+            duration: 3000,
+            position: 'top'
+        });
+        toast.present();
         this.dismiss();
         // console.log(this.fileInput.files[0]);
     };
     UploadLegislationModal = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-upload-legislation',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/upload-legislation.html"*/'\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Upload New Legislation\n    </ion-title>\n    <ion-buttons start>\n      <button ion-button (click)="dismiss()">\n        <!-- <span ion-text color="primary" showWhen="ios">Cancel</span> -->\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <form (submit)="save($event)">\n    <ion-list>\n      <ion-item>\n        <ion-label fixed>Title</ion-label>\n        <ion-input type="text" [(ngModel)]="legislation.title" name="title" placeholder="Enter Title"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label fixed>Section</ion-label>\n        <ion-input type="text" [(ngModel)]="legislation.citation" name="citation" placeholder="Enter Section"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label fixed>Notes</ion-label>\n        <ion-textarea type="text" [(ngModel)]="legislation.notes" name="notes" placeholder="Type your notes here"></ion-textarea>\n      </ion-item>\n\n       <ion-item id="fileUpload">\n        <ion-label><button ion-button (click)="uploadFile()">Upload</button></ion-label>\n        <ion-input type="text" [(ngModel)]="legislationName" name="legislationName" readonly></ion-input>\n        <!-- <p id="caseFileName">C:\fakepath\adas</p> -->\n         <ion-input id="fileInput" type="file" name="file" accept="application/pdf" hidden></ion-input>\n      </ion-item>\n\n      <div padding>\n        <ion-grid>\n          <ion-row>\n            <ion-col col-3 offset-6 >\n              <button ion-button color="primary"  type="submit" block>Save\n              </button>\n            </ion-col>\n            <ion-col col-3>\n              <button ion-button color="primary"  (click)="dismiss()" block>Cancel\n              </button>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </div>\n\n    </ion-list>\n  </form>\n</ion-content>'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/upload-legislation.html"*/,
+            selector: 'page-upload-legislation',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/upload-legislation.html"*/'\n<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Upload New Legislation\n    </ion-title>\n    <ion-buttons start>\n      <button ion-button (click)="dismiss()">\n        <!-- <span ion-text color="primary" showWhen="ios">Cancel</span> -->\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <form (submit)="save($event)">\n    <div class="form-wrapper">\n\n    <ion-list>\n      <ion-item>\n        <ion-label fixed>Title</ion-label>\n        <ion-input type="text" [(ngModel)]="legislation.title" name="title" placeholder="Enter Title"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label fixed>Section</ion-label>\n        <ion-input type="text" [(ngModel)]="legislation.citation" name="citation" placeholder="Enter Section"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label fixed>Notes</ion-label>\n        <ion-textarea type="text" [(ngModel)]="legislation.notes" name="notes" placeholder="Type your notes here"></ion-textarea>\n      </ion-item>\n\n       <ion-item id="fileUpload">\n        <ion-label><button ion-button (click)="uploadFile()">Upload</button></ion-label>\n        <ion-input type="text" [(ngModel)]="legislationName" name="legislationName" readonly></ion-input>\n        <!-- <p id="caseFileName">C:\fakepath\adas</p> -->\n         <ion-input id="fileInput" type="file" name="file" accept="application/pdf" hidden></ion-input>\n      </ion-item>\n\n    </ion-list>\n  </div>\n      <div padding>\n        <ion-grid>\n          <ion-row>\n            <ion-col col-3 offset-6 >\n              <button ion-button color="primary"  type="submit" block>Save\n              </button>\n            </ion-col>\n            <ion-col col-3>\n              <button ion-button color="primary"  (click)="dismiss()" block>Cancel\n              </button>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </div>\n  </form>\n</ion-content>'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/upload-legislation.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]])
     ], UploadLegislationModal);
     return UploadLegislationModal;
+}());
+
+var DraftPeshiModal = /** @class */ (function () {
+    function DraftPeshiModal(navCtrl, navParams, viewCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+    }
+    DraftPeshiModal.prototype.ionViewDidLoad = function () {
+        this.quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+        this.quill.on('text-change', function (delta, oldDelta, source) {
+        });
+    };
+    DraftPeshiModal.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    DraftPeshiModal.prototype.save = function ($event) {
+        $event.preventDefault();
+        var textEL = document.querySelector('#editor .ql-editor');
+        console.log(textEL.innerHTML);
+    };
+    DraftPeshiModal = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-draft-peshi',template:/*ion-inline-start:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/draft-peshi.html"*/'<ion-header>\n  <ion-toolbar>\n    <ion-title>\n      Upload New Case Law\n    </ion-title>\n    <ion-buttons start>\n      <button ion-button (click)="dismiss()">\n        <!-- <span ion-text color="primary" showWhen="ios">Cancel</span> -->\n        <ion-icon name="md-close"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content>\n	<div id="editor-wrapper">\n	<!-- Create the editor container -->\n	<div id="editor">\n	  <p>Hello World!</p>\n	  <p>Some initial <strong>bold</strong> text</p>\n	  <p><br></p>\n	</div>\n	</div>\n	<div padding id="buttons">\n        <ion-grid>\n          <ion-row >\n            <ion-col col-3 offset-6 >\n              <button ion-button color="primary"  (click)="save($event)" block>Save\n              </button>\n            </ion-col>\n            <ion-col col-3>\n              <button ion-button color="primary"  (click)="dismiss()" block>Cancel\n              </button>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </div>\n</ion-content>\n\n\n\n<!-- Initialize Quill editor -->\n<script>\n  var \n</script>'/*ion-inline-end:"/media/partho/NewDrive/other/lawyer/Lawyer/src/pages/casefile/draft-peshi.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
+    ], DraftPeshiModal);
+    return DraftPeshiModal;
 }());
 
 //# sourceMappingURL=casefile.js.map
