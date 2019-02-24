@@ -365,8 +365,8 @@ var CaseFilePage = /** @class */ (function () {
         this.account = this.navParams.get('account');
         this.currentDoc = 'Case File';
         console.log(this.casefile, this.casefile['caseNo']);
-        // this.baseUrl = 'https://courtdesk.github.io';
-        this.baseUrl = 'http://127.0.0.1:8080';
+        this.baseUrl = 'https://courtdesk.github.io';
+        // this.baseUrl = 'http://127.0.0.1:8080';
         this.removedItems = ["pan", "ink-signature", "image", "stamp", "line", "rectangle", "arrow", "ellipse", "polygon", "polyline"];
         if (this.account.type == "cs") {
             this.removedItems.push("annotate", "ink", "highlighter", "note", "text");
