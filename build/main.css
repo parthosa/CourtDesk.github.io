@@ -25628,7 +25628,7 @@ ion-navbar.toolbar {
 }
 
 .main-pane {
-  height: 150vh;
+  min-height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 0;
@@ -25636,6 +25636,62 @@ ion-navbar.toolbar {
   max-width: calc(100% - 19% - 4.3%);
   padding-left: 1.7%;
   padding-right: 1.7%;
+}
+
+.sidepane {
+  color: black;
+}
+
+.sidepane ion-grid {
+  height: 100%;
+  padding: 0;
+}
+
+.sidepane ion-row {
+  margin: 0;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.sidepane ion-row.additional-option.row {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.profile h4 {
+  font-size: 2.3rem;
+  margin: 0;
+  letter-spacing: 0.6px;
+  padding-left: 12px;
+}
+
+.profile p {
+  margin: 0;
+}
+
+.profile ion-col {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -webkit-align-items: start;
+  -ms-flex-align: start;
+  align-items: start;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.heading {
+  margin: 25px 10px;
+  padding-left: 16px;
 }
 
 ion-card {
@@ -25652,18 +25708,21 @@ button {
   content: none !important;
 }
 
-page-casefile ion-grid.page-grid {
-  padding: 0 !important;
-  height: 100vh;
+.breadcrumbs p {
+  color: #444;
+  margin: 27px 0;
 }
 
-page-casefile ion-grid.page-grid ion-row.page-row {
-  height: 100vh;
+.breadcrumbs p span.path {
+  margin: 0 7px;
+  font-size: 1.1em;
+  letter-spacing: -0.4px;
+  cursor: pointer;
 }
 
-page-casefile .icon-panel {
+.icon-panel {
   height: 100%;
-  padding: 30px 10px;
+  padding: 15px 10px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25679,10 +25738,10 @@ page-casefile .icon-panel {
   justify-content: space-between;
 }
 
-page-casefile .logout {
-  cursor: pointer;
+.logout {
   color: white;
   font-size: 1.8em;
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25697,48 +25756,39 @@ page-casefile .logout {
   justify-content: center;
 }
 
-page-casefile .logo img {
-  width: 32px;
-  /* height: 24px; */
-}
-
-page-casefile .sidepane {
-  color: black;
-}
-
-page-casefile .sidepane ion-grid {
-  height: 100%;
-}
-
-page-casefile .sidepane ion-row {
-  padding-top: 10px;
-}
-
-page-casefile .profile h4 {
-  font-size: 2.3rem;
-  margin-left: 10px;
-  letter-spacing: 0.6px;
-}
-
-page-casefile .profile p {
-  margin: 0;
-}
-
-page-casefile .profile ion-col {
+.logo {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: start;
-  -webkit-align-items: start;
-  -ms-flex-align: start;
-  align-items: start;
-  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 3px;
+}
+
+.logo img {
+  width: 32px;
+  height: auto;
+}
+
+page-casefile ion-grid.page-grid {
+  padding: 0 !important;
+  height: 100vh;
+}
+
+page-casefile ion-grid.page-grid ion-row.page-row {
+  height: 100vh;
+}
+
+page-casefile h5.current-doc {
+  margin-top: 0.6em;
+  padding-left: 2px;
 }
 
 page-casefile ion-row.details.row {
@@ -25858,6 +25908,7 @@ page-casefile ion-row.sidepane-menu.row {
 }
 
 page-casefile .right-corner {
+  margin: 25px 10px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25873,7 +25924,7 @@ page-casefile .right-corner {
 }
 
 page-casefile .right-corner p {
-  margin: 14px 0.8em;
+  margin: 0 0.8em;
   font-size: 1.2em;
   cursor: pointer;
 }
@@ -25952,11 +26003,14 @@ page-casefile .pdf-view {
 
 page-casefile .pdf-view ion-card.card.card-md {
   height: 100%;
+  width: 100%;
   margin: 0 !important;
 }
 
 page-casefile .pdf-view ion-card-content.card-content.card-content-md {
   height: 100%;
+  padding: 0 !important;
+  margin: 7px;
 }
 
 page-casefile .viewer {
@@ -26013,18 +26067,6 @@ page-upload-caselaw form {
   height: 100%;
 }
 
-page-upload-caselaw .breadcrumbs p {
-  color: #444;
-  margin: 0.5em 0;
-}
-
-page-upload-caselaw .breadcrumbs p span.path {
-  margin: 0 7px;
-  font-size: 1.1em;
-  letter-spacing: -0.4px;
-  cursor: pointer;
-}
-
 page-upload-legislation ion-label {
   white-space: normal;
 }
@@ -26051,28 +26093,13 @@ page-dashboard ion-grid.page-grid ion-row.page-row {
   height: 100vh;
 }
 
-page-dashboard .icon-panel {
-  height: 100%;
-  padding: 30px 10px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+page-dashboard #calendar {
+  width: 500px;
 }
 
-page-dashboard .logout {
-  color: white;
-  font-size: 1.8em;
-  cursor: pointer;
+page-dashboard .right-corner {
+  float: right;
+  margin: 25px 10px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26081,24 +26108,31 @@ page-dashboard .logout {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
 }
 
-page-dashboard .logo img {
-  width: 32px;
-  /* height: 24px; */
+page-dashboard .right-corner p {
+  margin: 0;
+  margin-right: 1.2em;
+  cursor: pointer;
+  font-size: 1em;
 }
 
-page-dashboard .right-corner {
-  float: right;
-  margin: 10px;
+page-dashboard .right-corner #calendar-icon {
+  color: grey;
+  font-size: 1.4em !important;
+  padding-right: 6px;
+}
+
+page-dashboard .right-corner p#date {
+  color: #555;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -26106,57 +26140,12 @@ page-dashboard .right-corner {
 }
 
 page-dashboard .right-corner p#logout {
-  margin: 10px;
   cursor: pointer;
   color: #0065FF;
 }
 
-page-dashboard .right-corner p#logout:hover {
+page-dashboard .right-corner p:hover {
   text-decoration: underline;
-}
-
-page-dashboard .sidepane {
-  color: black;
-}
-
-page-dashboard .sidepane ion-grid {
-  height: 100%;
-}
-
-page-dashboard .sidepane ion-row {
-  padding-top: 10px;
-}
-
-page-dashboard .profile h4 {
-  font-size: 2.3rem;
-  margin-left: 10px;
-  letter-spacing: 0.6px;
-}
-
-page-dashboard .profile p {
-  margin: 0;
-}
-
-page-dashboard .profile ion-col {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: start;
-  -webkit-align-items: start;
-  -ms-flex-align: start;
-  align-items: start;
-  height: 100%;
-}
-
-page-dashboard .heading {
-  margin: 40px 10px;
-  padding-left: 16px;
 }
 
 page-dashboard .document-list {
@@ -26252,15 +26241,15 @@ page-dashboard .sidepane-menu ion-label {
   margin: 7px 0 !important;
 }
 
-page-dashboard ion-row.details.row {
+page-dashboard ion-row.details.row, page-dashboard ion-row.options.row {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-box-align: start;
-  -webkit-align-items: start;
-  -ms-flex-align: start;
-  align-items: start;
+  -webkit-box-align: start !important;
+  -webkit-align-items: start !important;
+  -ms-flex-align: start !important;
+  align-items: start !important;
 }
 
 page-dashboard ion-item.doc-list-header.item {
@@ -26281,12 +26270,6 @@ page-dashboard .no-files {
   margin: 2em 1em;
 }
 
-page-dashboard p#date {
-  margin-right: 1em;
-  font-size: 1em;
-  color: #555;
-}
-
 page-dashboard .uploaded .doc-list .details p {
   color: #0065FF;
 }
@@ -26294,16 +26277,6 @@ page-dashboard .uploaded .doc-list .details p {
 page-dashboard .not-uploaded .doc-list .details p {
   color: #666;
   opacity: 0.8;
-}
-
-page-dashboard .not-uploaded:before {
-  content: '';
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  right: -3px;
-  border-right: 7px red solid;
 }
 
 page-dashboard button.hidden {
@@ -26371,7 +26344,18 @@ page-dashboard .sidepane-menu-items .item-wrapper p.header-item {
 }
 
 page-dashboard .sidepane-menu-items .item-wrapper p.header-item span {
-  display: inline-grid;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 page-dashboard .sidepane-menu-items p {
@@ -26407,17 +26391,29 @@ page-dashboard .sidepane-menu-items p.active {
   background-color: rgba(9, 30, 66, 0.04);
 }
 
-page-dashboard ion-row.sidepane-menu.row {
-  height: 78%;
-}
-
 page-dashboard .additional-option .sidepane-menu-items {
   background: #0f47a6;
+  margin: 10px;
 }
 
 page-dashboard .additional-option .sidepane-menu-items p {
   color: #deebff;
   fill: #deebff;
+}
+
+page-dashboard .options p {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 page-court-staff ion-label {
@@ -26435,6 +26431,24 @@ page-court-staff .form-wrapper {
 
 page-court-staff form {
   height: 100%;
+}
+
+page-calendar .scroll-content {
+  overflow-y: scroll;
+}
+
+page-calendar .calendar-wrapper {
+  /* margin: 0; */
+  width: 94%;
+  margin: 3%;
+  /* left: 3%; *
+
+    /
+    /* position: relative; */
+}
+
+page-calendar .calendar-wrapper #calendar {
+  width: 100%;
 }
 
 page-login ion-grid {
