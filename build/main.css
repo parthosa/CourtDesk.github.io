@@ -25791,6 +25791,14 @@ page-casefile h5.current-doc {
   padding-left: 2px;
 }
 
+page-casefile #flag-button {
+  display: none;
+}
+
+page-casefile .show-flag {
+  display: block !important;
+}
+
 page-casefile ion-row.details.row {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
@@ -26023,17 +26031,21 @@ page-casefile .header-md::after, page-casefile .tabs-md[tabsPlacement="top"] > .
   content: none !important;
 }
 
-page-draft-peshi div#editor-wrapper {
+page-draft-peshi .add-padding, page-draft-order .add-padding {
+  padding: 16px;
+}
+
+page-draft-peshi div#editor-wrapper, page-draft-order div#editor-wrapper {
   height: 80%;
   /* overflow-y: scroll; */
 }
 
-page-draft-peshi div#editor-wrapper div#editor {
+page-draft-peshi div#editor-wrapper div#editor, page-draft-order div#editor-wrapper div#editor {
   /* overflow-y: scroll; */
   height: 88%;
 }
 
-page-draft-peshi .ql-toolbar.ql-snow {
+page-draft-peshi .ql-toolbar.ql-snow, page-draft-order .ql-toolbar.ql-snow {
   height: 12%;
   display: -webkit-box;
   display: -webkit-flex;
