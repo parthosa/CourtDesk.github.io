@@ -26096,6 +26096,12 @@ page-upload-legislation form {
   height: 100%;
 }
 
+page-dashboard {
+  /* Tooltip container */
+  /* Tooltip text */
+  /* Show the tooltip text when you mouse over the tooltip container */
+}
+
 page-dashboard ion-grid.page-grid {
   padding: 0 !important;
   min-height: 100vh;
@@ -26105,8 +26111,66 @@ page-dashboard ion-grid.page-grid ion-row.page-row {
   height: 100vh;
 }
 
+page-dashboard #legend p {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+page-dashboard #legend p span.color-pallet-name {
+  font-size: 1.3rem;
+  color: #666;
+  padding-top: 1px;
+}
+
+page-dashboard #legend p span.color-pallet {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+
+page-dashboard #legend p span.color-pallet.not-uploaded {
+  background: #0065FF;
+}
+
+page-dashboard #legend p span.color-pallet.urgent {
+  background: red;
+}
+
 page-dashboard #calendar {
   width: 500px;
+}
+
+page-dashboard .tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+page-dashboard .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  width: 80%;
+  left: 10%;
+}
+
+page-dashboard .tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 page-dashboard .right-corner {
@@ -26156,10 +26220,6 @@ page-dashboard .right-corner p#logout {
   color: #0065FF;
 }
 
-page-dashboard .right-corner p:hover {
-  text-decoration: underline;
-}
-
 page-dashboard .document-list {
   width: 100%;
 }
@@ -26196,7 +26256,7 @@ page-dashboard .document-list ion-card-header {
   padding-top: 0 !important;
 }
 
-page-dashboard .document-list ion-card-header span {
+page-dashboard .document-list ion-card-header span.case-type-header {
   padding: 10px;
   line-height: 2;
   background: rgba(9, 30, 66, 0.06);
@@ -26283,12 +26343,16 @@ page-dashboard .no-files {
 }
 
 page-dashboard .uploaded .doc-list .details p {
-  color: #0065FF;
+  color: #666;
 }
 
 page-dashboard .not-uploaded .doc-list .details p {
-  color: #666;
+  color: #0065FF;
   opacity: 0.8;
+}
+
+page-dashboard .urgent .doc-list .details p {
+  color: red !important;
 }
 
 page-dashboard button.hidden {
